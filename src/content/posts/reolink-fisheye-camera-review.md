@@ -136,4 +136,4 @@ This is exactly what you need.
 
 ---
 
-*[Check current price on Amazon UK](https://www.amazon.co.uk/dp/B0DUMMY?tag=filce-21)*
+*[Check current price on Amazon UK](https://amzn.to/41TwvVY)*

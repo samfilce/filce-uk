@@ -103,4 +103,4 @@ For PC builders, it's a no-brainer — better than canned air in every way that 
 
 ---
 
-*[Check current price on Amazon UK](https://www.amazon.co.uk/dp/B0DUMMY?tag=filce-21)*
+*[Check current price on Amazon UK](https://amzn.to/47PwiXj)*
