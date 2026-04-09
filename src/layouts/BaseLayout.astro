@@ -1,0 +1,56 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { SITE_DESCRIPTION, SITE_TITLE, categorySlug } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: 'website' | 'article';
+  category?: string;
+}
+
+const { title, description = SITE_DESCRIPTION, canonicalPath = Astro.url.pathname, ogType = 'website', category } = Astro.props;
+const fullTitle = title ? `${title} — ${SITE_TITLE}` : SITE_TITLE;
+const canonicalUrl = new URL(canonicalPath, Astro.site);
+const breadcrumb = [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://filce.uk/' },
+  ...(category && title ? [
+    { '@type': 'ListItem', position: 2, name: category, item: `https://filce.uk/categories/${categorySlug(category)}/` },
+    { '@type': 'ListItem', position: 3, name: title, item: canonicalUrl.toString() }
+  ] : title ? [
+    { '@type': 'ListItem', position: 2, name: title, item: canonicalUrl.toString() }
+  ] : [])
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Sam Filce" />
+    <meta property="og:title" content={title ?? SITE_TITLE} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title ?? SITE_TITLE} />
+    <meta name="twitter:description" content={description} />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+    <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumb })} />
+  </head>
+  <body>
+    <Header currentPath={Astro.url.pathname} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

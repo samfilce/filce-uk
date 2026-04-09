@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categorySlug, formatDate } from '../../lib/site';
+import { getCategories, getPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  const posts = await getPosts();
+  return categories.map((category) => ({
+    params: { category: category.slug },
+    props: { category: category.name, posts: posts.filter((post) => post.category === category.name) }
+  }));
+}
+
+const { category, posts } = Astro.props;
+---
+<BaseLayout title={`${category} Reviews`} description={`Posts in ${category}`} canonicalPath={`/categories/${categorySlug(category)}/`}>
+  <section class="posts-section">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">{category}</h1>
+        <p class="section-sub">Posts filed under {category}.</p>
+      </div>
+      <div class="post-grid">
+        {posts.map((post) => (
+          <article class="post-card">
+            <div class="post-card-image">
+              {post.featuredImage ? (
+                <img src={post.featuredImage} alt={post.featuredImageAlt ?? post.title} loading="lazy" />
+              ) : (
+                <div class="post-card-placeholder" aria-hidden="true"><span>{post.category ?? 'Review'}</span></div>
+              )}
+            </div>
+            <div class="post-card-body">
+              <a href={`/categories/${categorySlug(post.category ?? category)}/`} class="post-category-tag">{post.category}</a>
+              <h2 class="post-card-title"><a href={post.url}>{post.title}</a></h2>
+              {post.description && <p class="post-card-excerpt">{post.description}</p>}
+              <div class="post-card-meta">
+                <time datetime={post.date.toISOString().slice(0, 10)}>{formatDate(post.date)}</time>
+                <span class="meta-sep">·</span>
+                <span>{post.readingTime}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

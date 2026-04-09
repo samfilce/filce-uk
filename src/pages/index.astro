@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categorySlug, formatDate } from '../lib/site';
+import { getPosts } from '../lib/posts';
+
+const posts = await getPosts();
+---
+<BaseLayout title="Filce.uk — Honest UK Tech Reviews, Home Automation & Gear" description="Real reviews of the tech, tools and gear Sam actually buys and uses. Home automation, 3D printing, homelabs, and more." canonicalPath="/">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Personal reviews from a UK tinkerer</p>
+        <h1 class="hero-title">Gear I've actually bought.<br />Takes I actually have.</h1>
+        <p class="hero-desc">No press samples, no sponsored posts - just honest thoughts on the tech and tools that make their way into my home.</p>
+        <a href="/about/" class="btn btn-primary">About me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest posts</h2>
+        <p class="section-sub">Fresh from the workshop, server rack, or Amazon box.</p>
+      </div>
+
+      {posts.length ? (
+        <div class="post-grid">
+          {posts.map((post) => (
+            <article class="post-card">
+              <div class="post-card-image">
+                {post.featuredImage ? (
+                  <img src={post.featuredImage} alt={post.featuredImageAlt ?? post.title} loading="lazy" />
+                ) : (
+                  <div class="post-card-placeholder" aria-hidden="true"><span>{post.category ?? 'Review'}</span></div>
+                )}
+              </div>
+              <div class="post-card-body">
+                {post.category && <a href={`/categories/${categorySlug(post.category)}/`} class="post-category-tag">{post.category}</a>}
+                <h3 class="post-card-title"><a href={post.url}>{post.title}</a></h3>
+                {post.description && <p class="post-card-excerpt">{post.description}</p>}
+                <div class="post-card-meta">
+                  <time datetime={post.date.toISOString().slice(0, 10)}>{formatDate(post.date)}</time>
+                  <span class="meta-sep">·</span>
+                  <span>{post.readingTime}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">Posts coming soon - check back shortly.</p>
+      )}
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="section-title">Browse by category</h2>
+      <div class="category-grid">
+        <a href="/categories/tech/" class="category-card"><span class="category-icon">💻</span><span class="category-name">Tech</span></a>
+        <a href="/categories/home-automation/" class="category-card"><span class="category-icon">🏠</span><span class="category-name">Home Automation</span></a>
+        <a href="/categories/homelabs/" class="category-card"><span class="category-icon">🖥️</span><span class="category-name">Homelabs</span></a>
+        <a href="/categories/gaming-accessories/" class="category-card"><span class="category-icon">🎮</span><span class="category-name">Gaming Accessories</span></a>
+        <a href="/categories/tools/" class="category-card"><span class="category-icon">🔧</span><span class="category-name">Tools</span></a>
+        <a href="/categories/home-renovation/" class="category-card"><span class="category-icon">🪚</span><span class="category-name">Home Renovation</span></a>
+        <a href="/categories/3d-printing/" class="category-card"><span class="category-icon">🖨️</span><span class="category-name">3D Printing</span></a>
+        <a href="/categories/photography-video/" class="category-card"><span class="category-icon">📷</span><span class="category-name">Photography & Video</span></a>
+        <a href="/categories/pet/" class="category-card"><span class="category-icon">🐕</span><span class="category-name">Pet</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

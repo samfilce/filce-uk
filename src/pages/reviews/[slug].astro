@@ -1,0 +1,12 @@
+---
+import PostPage from '../../components/PostPage.astro';
+import { getPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = (await getPosts()).filter((post) => post.permalink?.startsWith('/reviews/'));
+  return posts.map((post) => ({ params: { slug: post.urlSlug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<PostPage post={post} />

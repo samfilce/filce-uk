@@ -1,0 +1,25 @@
+{
+  "name": "filce-uk-astro",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal tech and gear review blog \u2014 filce.uk",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "wrangler pages deploy dist --project-name filce-uk"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^6.1.5",
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.7"
+  },
+  "devDependencies": {
+    "wrangler": "^4.10.0"
+  }
+}

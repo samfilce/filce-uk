@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categorySlug, formatDate } from '../lib/site';
+
+const { post } = Astro.props;
+const reviewSchema = post.rating
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Review',
+      itemReviewed: { '@type': 'Product', name: post.title },
+      reviewRating: { '@type': 'Rating', ratingValue: String(post.rating), bestRating: '5' },
+      author: { '@type': 'Person', name: 'Sam Filce' },
+      publisher: { '@type': 'Organization', name: 'Filce.uk' },
+      datePublished: post.date.toISOString().slice(0, 10),
+      description: post.description ?? ''
+    }
+  : null;
+---
+<BaseLayout title={post.title} description={post.description} canonicalPath={post.url} ogType="article" category={post.category}>
+  {reviewSchema && <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />}
+  <article class="post-full">
+    <div class="container post-container">
+      <header class="post-header">
+        {post.category && <a href={`/categories/${categorySlug(post.category)}/`} class="post-category-tag">{post.category}</a>}
+        <h1 class="post-title">{post.title}</h1>
+        <div class="post-meta">
+          <time datetime={post.date.toISOString().slice(0, 10)}>{formatDate(post.date)}</time>
+          <span class="meta-sep">·</span>
+          <span class="reading-time">{post.readingTime}</span>
+        </div>
+        {post.description && <p class="post-excerpt">{post.description}</p>}
+      </header>
+
+      {post.featuredImage ? (
+        <div class="post-hero">
+          <img src={post.featuredImage} alt={post.featuredImageAlt ?? post.title} class="post-hero-image" loading="eager" />
+        </div>
+      ) : (
+        <div class="post-hero post-hero-placeholder" aria-hidden="true">
+          <div class="hero-placeholder-inner">
+            <span class="hero-category-label">{post.category ?? 'Review'}</span>
+          </div>
+        </div>
+      )}
+
+      <div class="post-content prose" set:html={post.html} />
+
+      <footer class="post-footer">
+        {post.tags && (
+          <div class="post-tags">
+            {post.tags.filter((tag) => tag !== 'posts').map((tag) => <span class="tag">#{tag}</span>)}
+          </div>
+        )}
+        <div class="post-affiliate-note">
+          <p>🔗 Some links above may be Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases - at no extra cost to you.</p>
+        </div>
+        <a href="/" class="back-link">← Back to all posts</a>
+      </footer>
+    </div>
+  </article>
+</BaseLayout>
