@@ -1,3 +1,5 @@
-name = "filce-uk"
-compatibility_date = "2026-04-09"
-pages_build_output_dir = "dist"
+# Cloudflare Pages configuration - no deploy command needed
+# Cloudflare Pages handles deployment automatically from GitHub
+
+# This file is intentionally empty for Pages projects
+# Build is handled via Cloudflare Dashboard → Build settings
