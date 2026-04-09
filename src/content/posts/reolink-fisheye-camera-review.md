@@ -4,6 +4,8 @@ date: 2026-04-09
 description: "A fisheye PoE camera that covers an entire room, integrates perfectly with Home Assistant, and lets me monitor our Malamute with AI-powered alerts."
 category: "Home Automation"
 rating: 5
+featuredImage: "/images/reolink-fisheye.jpg"
+featuredImageAlt: "Reolink fisheye camera night vision view showing lounge, dining room, and landing with our Malamute Ice"
 tags: ["home-automation", "security", "pets", "reolink", "home-assistant"]
 ---
 
