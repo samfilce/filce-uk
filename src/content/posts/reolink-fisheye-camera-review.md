@@ -1,12 +1,16 @@
 ---
 title: "Reolink PoE Fisheye Camera Review — Perfect for Whole-Room Pet Monitoring"
 date: 2026-04-09
-description: "A fisheye PoE camera that covers an entire room, integrates perfectly with Home Assistant, and lets me monitor our Malamute with AI-powered alerts."
+description: "Hands-on Reolink fisheye PoE camera review: 180° room coverage, Home Assistant integration, two-way audio for pet monitoring. Real photos, honest pros and cons."
 category: "Home Automation"
 rating: 5
+product: "Reolink Fisheye PoE Security Camera"
+brand: "Reolink"
+price: "£149.99"
+affiliateLink: "https://amzn.to/41TwvVY"
 featuredImage: "/images/reolink-fisheye.jpg"
 featuredImageAlt: "Reolink fisheye camera night vision view showing lounge, dining room, and landing with our Malamute Ice"
-tags: ["home-automation", "security", "pets", "reolink", "home-assistant"]
+tags: ["home-automation", "security", "pets", "reolink", "home-assistant", "poe-camera", "fisheye-camera", "pet-monitoring"]
 ---
 
 # Reolink PoE Fisheye Camera Review
