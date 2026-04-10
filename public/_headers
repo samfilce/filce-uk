@@ -6,3 +6,7 @@
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+/api/*.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
