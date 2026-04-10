@@ -1,0 +1,267 @@
+---
+interface Props {
+  placeholder?: string;
+}
+
+const { placeholder = 'Search reviews...' } = Astro.props;
+---
+
+<div class="search-container">
+  <button class="search-toggle" aria-label="Open search" aria-expanded="false">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+  <div class="search-modal" role="dialog" aria-label="Search">
+    <div class="search-backdrop"></div>
+    <div class="search-content">
+      <div class="search-input-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="search" 
+          class="search-input" 
+          placeholder={placeholder}
+          aria-label="Search reviews"
+          autocomplete="off"
+        />
+        <button class="search-close" aria-label="Close search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" role="list"></div>
+      <div class="search-empty">Type to search reviews...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Fuse from 'fuse.js';
+
+  const searchToggle = document.querySelector('.search-toggle');
+  const searchModal = document.querySelector('.search-modal');
+  const searchBackdrop = document.querySelector('.search-backdrop');
+  const searchClose = document.querySelector('.search-close');
+  const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+  const searchResults = document.querySelector('.search-results');
+  const searchEmpty = document.querySelector('.search-empty');
+
+  let fuse: Fuse<any> | null = null;
+  let searchLoaded = false;
+
+  async function loadSearchIndex() {
+    if (searchLoaded) return;
+    try {
+      const res = await fetch('/api/search.json');
+      const data = await res.json();
+      fuse = new Fuse(data, {
+        keys: ['title', 'description', 'category'],
+        threshold: 0.3,
+        includeScore: true
+      });
+      searchLoaded = true;
+    } catch (e) {
+      console.error('Failed to load search index:', e);
+    }
+  }
+
+  function openSearch() {
+    searchModal?.classList.add('is-open');
+    searchInput?.focus();
+    loadSearchIndex();
+  }
+
+  function closeSearch() {
+    searchModal?.classList.remove('is-open');
+    if (searchInput) searchInput.value = '';
+    if (searchResults) searchResults.innerHTML = '';
+    if (searchEmpty) searchEmpty.style.display = 'block';
+  }
+
+  function performSearch(query: string) {
+    if (!fuse || !query.trim()) {
+      if (searchResults) searchResults.innerHTML = '';
+      if (searchEmpty) searchEmpty.style.display = 'block';
+      return;
+    }
+
+    const results = fuse.search(query).slice(0, 8);
+    
+    if (results.length === 0) {
+      if (searchResults) searchResults.innerHTML = '';
+      if (searchEmpty) {
+        searchEmpty.textContent = 'No results found';
+        searchEmpty.style.display = 'block';
+      }
+      return;
+    }
+
+    if (searchEmpty) searchEmpty.style.display = 'none';
+    
+    if (searchResults) {
+      searchResults.innerHTML = results.map(r => `
+        <a href="${r.item.url}" class="search-result" role="listitem">
+          <span class="search-result-category">${r.item.category || ''}</span>
+          <span class="search-result-title">${r.item.title}</span>
+          <span class="search-result-desc">${r.item.description || ''}</span>
+        </a>
+      `).join('');
+    }
+  }
+
+  searchToggle?.addEventListener('click', openSearch);
+  searchBackdrop?.addEventListener('click', closeSearch);
+  searchClose?.addEventListener('click', closeSearch);
+
+  searchInput?.addEventListener('input', (e) => {
+    performSearch((e.target as HTMLInputElement).value);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+      closeSearch();
+    }
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+</script>
+
+<style>
+  .search-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .search-toggle:hover {
+    background: var(--bg-hover);
+  }
+
+  .search-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+  }
+  .search-modal.is-open {
+    display: flex;
+  }
+
+  .search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .search-content {
+    position: relative;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 560px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .search-icon {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .search-input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    color: var(--text-primary);
+    outline: none;
+  }
+
+  .search-input::placeholder {
+    color: var(--text-secondary);
+  }
+
+  .search-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+  }
+
+  .search-results {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .search-result {
+    display: block;
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.15s;
+  }
+  .search-result:hover {
+    background: var(--bg-hover);
+  }
+  .search-result:last-child {
+    border-bottom: none;
+  }
+
+  .search-result-category {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .search-result-title {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .search-result-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+  }
+</style>

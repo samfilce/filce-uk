@@ -2,7 +2,7 @@
   "name": "filce-uk-astro",
   "type": "module",
   "version": "1.0.0",
-  "description": "Personal tech and gear review blog \u2014 filce.uk",
+  "description": "Personal tech and gear review blog — filce.uk",
   "engines": {
     "node": ">=20"
   },
@@ -16,6 +16,7 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^6.1.5",
+    "fuse.js": "^7.3.0",
     "gray-matter": "^4.0.3",
     "marked": "^15.0.7"
   },

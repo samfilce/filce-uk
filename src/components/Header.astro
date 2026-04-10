@@ -1,4 +1,6 @@
 ---
+import Search from './Search.astro';
+
 const { currentPath = '/' } = Astro.props;
 const isActive = (path) => currentPath === path;
 ---
@@ -36,6 +38,7 @@ const isActive = (path) => currentPath === path;
         </li>
       </ul>
     </nav>
+    <Search />
   </div>
 </header>
 
