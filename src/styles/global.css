@@ -659,6 +659,33 @@ ul, ol { padding-left: 1.5rem; }
 }
 .reading-time { }
 
+/* --- Rating Badge --- */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.rating-stars {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+.rating-stars .filled {
+  color: #f59e0b;
+}
+.rating-stars span:not(.filled) {
+  color: #d1d5db;
+}
+.rating-text {
+  font-weight: 700;
+  color: #92400e;
+  font-size: 0.95rem;
+}
+
 /* --- Responsive tweaks --- */
 @media (max-width: 480px) {
   .post-grid { grid-template-columns: 1fr; }

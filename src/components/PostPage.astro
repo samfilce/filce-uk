@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { categorySlug, formatDate } from '../lib/site';
 
 const { post } = Astro.props;
+const isReview = post.rating !== undefined;
 const reviewSchema = post.rating
   ? {
       '@context': 'https://schema.org',
@@ -15,9 +16,24 @@ const reviewSchema = post.rating
       description: post.description ?? ''
     }
   : null;
+const articleSchema = !post.rating
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description: post.description ?? '',
+      author: { '@type': 'Person', name: 'Sam Filce' },
+      publisher: { '@type': 'Organization', name: 'Filce.uk', logo: { '@type': 'ImageObject', url: 'https://filce.uk/og-image.png' } },
+      datePublished: post.date.toISOString().slice(0, 10),
+      dateModified: post.date.toISOString().slice(0, 10),
+      image: post.featuredImage ?? 'https://filce.uk/og-image.png',
+      mainEntityOfPage: { '@type': 'WebPage', '@id': post.url }
+    }
+  : null;
 ---
 <BaseLayout title={post.title} description={post.description} canonicalPath={post.url} ogType="article" category={post.category}>
   {reviewSchema && <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />}
+  {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
   <article class="post-full">
     <div class="container post-container">
       <header class="post-header">
@@ -52,6 +68,12 @@ const reviewSchema = post.rating
           </div>
         )}
         <div class="post-affiliate-note">
+          {isReview && post.rating && (
+            <div class="rating-badge" aria-label={`Rated ${post.rating} out of 5 stars`}>
+              <span class="rating-stars">{Array(5).fill('★').map((_, i) => <span class={i < post.rating! ? 'filled' : ''}>★</span>)}</span>
+              <span class="rating-text">{post.rating}/5</span>
+            </div>
+          )}
           <p>🔗 Some links above may be Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases - at no extra cost to you.</p>
         </div>
         <a href="/" class="back-link">← Back to all posts</a>
