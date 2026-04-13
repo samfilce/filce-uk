@@ -4,6 +4,8 @@ import { categorySlug, formatDate } from '../lib/site';
 import { getPosts } from '../lib/posts';
 
 const posts = await getPosts();
+const featuredGuideSlugs = ['best-pet-monitoring-cameras-uk-2025', 'home-assistant-pet-monitoring'];
+const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post): post is NonNullable<typeof post> => Boolean(post));
 ---
 <BaseLayout title="Filce.uk — Honest UK Tech Reviews, Home Automation & Gear" description="Real reviews of the tech, tools and gear Sam actually buys and uses. Home automation, 3D printing, homelabs, and more." canonicalPath="/">
   <section class="hero">
@@ -16,6 +18,41 @@ const posts = await getPosts();
       </div>
     </div>
   </section>
+
+  {featuredGuides.length > 0 && (
+    <section class="posts-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured guides</h2>
+          <p class="section-sub">High-intent guides built to help people choose, compare, and buy.</p>
+        </div>
+
+        <div class="post-grid">
+          {featuredGuides.map((post) => (
+            <article class="post-card">
+              <div class="post-card-image">
+                {post.featuredImage ? (
+                  <img src={post.featuredImage} alt={post.featuredImageAlt ?? post.title} loading="lazy" />
+                ) : (
+                  <div class="post-card-placeholder" aria-hidden="true"><span>{post.category ?? 'Guide'}</span></div>
+                )}
+              </div>
+              <div class="post-card-body">
+                {post.category && <a href={`/categories/${categorySlug(post.category)}/`} class="post-category-tag">{post.category}</a>}
+                <h3 class="post-card-title"><a href={post.url}>{post.title}</a></h3>
+                {post.description && <p class="post-card-excerpt">{post.description}</p>}
+                <div class="post-card-meta">
+                  <time datetime={post.date.toISOString().slice(0, 10)}>{formatDate(post.date)}</time>
+                  <span class="meta-sep">·</span>
+                  <span>{post.readingTime}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="posts-section">
     <div class="container">

@@ -92,6 +92,8 @@ Instead of just "motion detected," I get messages like:
 
 This is genuinely useful. I don't need to check the feed constantly — the AI tells me what matters.
 
+If you're setting this up from scratch, start with my [Home Assistant Pet Monitoring Setup](/posts/home-assistant-pet-monitoring/) guide.
+
 ---
 
 ## Coverage Quality

@@ -42,6 +42,8 @@ I've written a much more detailed getting started guide — covering installatio
 
 It's a practical PDF guide built from real-world experience. Worth it if you want to get up and running without the frustrating detours.
 
+If your main use case is keeping an eye on pets, I also wrote a setup guide here: [Home Assistant Pet Monitoring Setup](/posts/home-assistant-pet-monitoring/).
+
 ## What's next
 
 In future posts I'll go deeper on specific bits — Zigbee vs Z-Wave, the integrations I actually use, and the automations that turned out to be genuinely useful versus the ones that were clever but annoying in practice.
