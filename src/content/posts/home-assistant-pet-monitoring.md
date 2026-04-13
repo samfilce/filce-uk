@@ -151,7 +151,22 @@ That gives you:
 - recording you can trust
 - one place to manage everything
 
+---
+
+## Want the Full Home Assistant Guide?
+
+If you're new to Home Assistant or want to go deeper, I wrote a complete beginner's guide:
+
+**[Build Your Own AI Home Assistant →](https://gumroad.com/l/ai-home-assistant-guide)**
+
+6,300-word guide covering hardware, installation, integrations, first automations, local AI, and troubleshooting. No subscriptions, no cloud dependency.
+
+*£9.99 on Gumroad*
+
+---
+
 **Recommended next reads:**
 - [Best Pet Monitoring Cameras UK 2025](/posts/best-pet-monitoring-cameras-uk-2025/)
 - [Reolink PoE Fisheye Camera Review](/posts/reolink-fisheye-camera-review/)
 - [Getting Started with Home Assistant](/reviews/getting-started-home-assistant/)
+- [Home Automation Starter Checklist](/posts/home-automation-starter-checklist/) — free quick-reference

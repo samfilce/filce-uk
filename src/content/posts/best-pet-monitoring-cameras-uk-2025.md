@@ -211,3 +211,16 @@ If budget is tight, a basic WiFi camera is better than nothing. But if you want 
 - [Reolink Fisheye PoE Camera Review](/posts/reolink-fisheye-camera-review/) — Full deep-dive with Home Assistant setup
 - [SONOFF Zigbee/Thread PoE Controller Review](/posts/sonoff-poe-review/) — For running PoE to multiple cameras
 - [Pet Corrector Dog Trainer Review](/posts/pet-corrector-dog-trainer-review/) — Training tool that pairs well with camera monitoring
+- [Home Assistant Pet Monitoring Setup](/posts/home-assistant-pet-monitoring/) — How I integrated everything
+
+---
+
+## Want the Full Home Assistant Guide?
+
+If you're building a smart home around Home Assistant, I wrote a complete guide:
+
+**[Build Your Own AI Home Assistant →](https://gumroad.com/l/ai-home-assistant-guide)**
+
+Covers hardware selection, installation, integrations, first automations, local AI integration, and troubleshooting. 6,300 words of practical advice from real-world experience.
+
+*£9.99 on Gumroad*
