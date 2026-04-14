@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Smart Home Cost Calculator UK 2025 — How Much Does It Cost?"
+  description="Use our free smart home cost calculator to estimate how much it costs to set up a smart home in the UK. Get product recommendations and Amazon affiliate links."
+  canonicalPath="/smart-home-calculator/"
+>
+
+<section class="calc-hero">
+  <div class="container">
+    <p class="calc-eyebrow">Free tool</p>
+    <h1>Smart Home Cost Calculator UK 2025</h1>
+    <p class="calc-subtitle">How much does a smart home cost? Select your rooms and devices below to get an instant estimate — with product recommendations and shopping links.</p>
+  </div>
+</section>
+
+<section class="calc-body">
+  <div class="container calc-grid">
+
+    <!-- LEFT: Inputs -->
+    <div class="calc-inputs">
+
+      <div class="calc-card">
+        <h2>1. Select your rooms</h2>
+        <p class="calc-hint">Pick every room you want to make smart.</p>
+        <div class="room-grid" id="room-grid">
+          <label class="room-btn"><input type="checkbox" name="room" value="living-room" /> <span>🛋️ Living Room</span></label>
+          <label class="room-btn"><input type="checkbox" name="room" value="kitchen" /> <span>🍳 Kitchen</span></label>
+          <label class="room-btn"><input type="checkbox" name="room" value="bedroom" /> <span>🛏️ Bedroom</span></label>
+          <label class="room-btn"><input type="checkbox" name="room" value="bathroom" /> <span>🚿 Bathroom</span></label>
+          <label class="room-btn"><input type="checkbox" name="room" value="garden" /> <span>🌿 Garden</span></label>
+        </div>
+      </div>
+
+      <div class="calc-card">
+        <h2>2. Choose device types</h2>
+        <p class="calc-hint">Select every device category you're interested in.</p>
+        <div class="device-list" id="device-list">
+          <label class="device-item"><input type="checkbox" name="device" value="bulbs" /> <span class="device-label"><strong>💡 Smart Bulbs</strong><small>Colour-changing or white ambiance lighting</small></span></label>
+          <label class="device-item"><input type="checkbox" name="device" value="plugs" /> <span class="device-label"><strong>🔌 Smart Plugs</strong><small>Control any appliance remotely</small></span></label>
+          <label class="device-item"><input type="checkbox" name="device" value="sensors" /> <span class="device-label"><strong>👁️ Motion Sensors</strong><small>Trigger automations or alerts</small></span></label>
+          <label class="device-item"><input type="checkbox" name="device" value="cameras" /> <span class="device-label"><strong>📷 Security Cameras</strong><small>Indoor/outdoor monitoring</small></span></label>
+          <label class="device-item"><input type="checkbox" name="device" value="speakers" /> <span class="device-label"><strong>🔊 Smart Speakers</strong><small>Voice control hub for your home</small></span></label>
+        </div>
+      </div>
+
+      <div class="calc-card">
+        <h2>3. Budget tier</h2>
+        <p class="calc-hint">What's your approach?</p>
+        <div class="tier-group" id="tier-group">
+          <label class="tier-btn"><input type="radio" name="tier" value="budget" checked /> <span><strong>💚 Budget</strong> — Best value picks (IKEA, own-brand)</span></label>
+          <label class="tier-btn"><input type="radio" name="tier" value="mid" /> <span><strong>🔵 Mid-range</strong> — Reliable brands (TP-Link, Aqara)</span></label>
+          <label class="tier-btn"><input type="radio" name="tier" value="premium" /> <span><strong>🟡 Premium</strong> — Best-in-class (Philips Hue, Nest)</span></label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-calc" id="calc-btn">Calculate my smart home cost →</button>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="calc-results" id="calc-results" aria-live="polite">
+      <div class="results-placeholder">
+        <p>👆 Select your rooms and devices, then hit <strong>Calculate</strong> to see your estimate.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Internal links / context -->
+<section class="calc-context">
+  <div class="container prose-section">
+    <h2>What does a smart home cost in the UK?</h2>
+    <p>The cost of a smart home in the UK varies enormously depending on the number of rooms, device types, and brands you choose. A single-room starter setup with a smart speaker and a couple of bulbs might cost as little as <strong>£30–£50</strong>, while a fully-automated multi-room home with cameras, sensors, and voice control can easily run to <strong>£500–£1,500+</strong>.</p>
+    <p>The calculator above gives you a realistic estimate based on actual UK retail prices as of 2025. All product links use the Amazon UK affiliate tag <em>filce-21</em> and help support this site at no extra cost to you.</p>
+
+    <h2>Do I need a smart home hub?</h2>
+    <p>Many modern devices (Amazon Echo, Google Nest, Apple HomePod mini) act as hubs themselves. For more advanced automations, <a href="/posts/home-assistant-guide/">Home Assistant is the open-source powerhouse</a> that ties everything together — including cameras, sensors, and third-party devices.</p>
+
+    <h2>What about security cameras?</h2>
+    <p>We've tested several UK-friendly options. Read our full <a href="/posts/best-pet-monitoring-cameras-uk-2025/">best pet monitoring cameras UK 2025 guide</a> for detailed recommendations — including outdoor and indoor options that work with Home Assistant.</p>
+
+    <div class="cta-box">
+      <p>🏠 <strong>Want the full smart home setup guide?</strong></p>
+      <p>Our in-depth PDF guide covers wiring, automations, Home Assistant config, and affiliate product picks — all tailored for UK homes.</p>
+      <a href="https://gumroad.com/l/ai-home-assistant-guide" class="btn btn-primary" rel="noopener" target="_blank">Get the guide →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.calc-hero {
+  background: var(--color-accent-light);
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.calc-eyebrow {
+  text-transform: uppercase;
+  font-size: var(--size-xs);
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.calc-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.calc-subtitle {
+  color: var(--color-text-muted);
+  max-width: 640px;
+  font-size: var(--size-lg);
+}
+
+.calc-body { padding: 2.5rem 0; }
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .calc-grid { grid-template-columns: 1fr; }
+}
+
+.calc-card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.calc-card h2 {
+  font-size: var(--size-xl);
+  margin-bottom: 0.4rem;
+}
+.calc-hint {
+  font-size: var(--size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Rooms */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+.room-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-size: var(--size-sm);
+}
+.room-btn input { display: none; }
+.room-btn:has(input:checked) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Devices */
+.device-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.device-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.device-item input { display: none; }
+.device-item:has(input:checked) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+.device-label { display: flex; flex-direction: column; }
+.device-label strong { font-size: var(--size-base); }
+.device-label small { color: var(--color-text-muted); font-size: var(--size-xs); margin-top: 2px; }
+.device-item:has(input:checked) .device-label small { color: var(--color-accent); }
+
+/* Tiers */
+.tier-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.tier-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-size: var(--size-sm);
+}
+.tier-btn input { display: none; }
+.tier-btn:has(input:checked) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  font-weight: 600;
+}
+
+.btn-calc {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: var(--size-lg);
+  border: none;
+  cursor: pointer;
+}
+
+/* Results panel */
+.calc-results {
+  position: sticky;
+  top: 5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  min-height: 300px;
+}
+.results-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--size-lg);
+  line-height: 1.5;
+}
+
+/* Result content styles (injected by JS) */
+.result-estimate {
+  margin-bottom: 1.5rem;
+}
+.result-estimate h3 { font-size: var(--size-xl); margin-bottom: 0.5rem; }
+.cost-range {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.cost-badge {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--size-2xl);
+}
+.cost-badge.low { background: #dcfce7; color: #166534; }
+.cost-badge.high { background: #fef9c3; color: #854d0e; }
+@media (prefers-color-scheme: dark) {
+  .cost-badge.low { background: #14532d; color: #86efac; }
+  .cost-badge.high { background: #422006; color: #fde68a; }
+}
+.result-products h3 { font-size: var(--size-xl); margin-bottom: 0.75rem; }
+.product-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.product-list li {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.9rem;
+  font-size: var(--size-sm);
+}
+.product-list li a { font-weight: 600; }
+.product-list li .prod-price { color: var(--color-text-muted); font-size: var(--size-xs); display: block; margin-top: 2px; }
+.result-disclaimer {
+  margin-top: 1rem;
+  font-size: var(--size-xs);
+  color: var(--color-text-faint);
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+/* Context section */
+.calc-context { padding: 2.5rem 0 3rem; background: var(--color-bg-alt); border-top: 1px solid var(--color-border); }
+.prose-section { max-width: var(--container-prose); }
+.prose-section h2 { font-size: var(--size-2xl); margin: 1.75rem 0 0.6rem; }
+.prose-section h2:first-child { margin-top: 0; }
+.prose-section p { color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.75; }
+.cta-box {
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+.cta-box p { color: var(--color-text); margin-bottom: 0.5rem; }
+.cta-box .btn { margin-top: 0.75rem; }
+</style>
+
+<script>
+const PRODUCTS = {
+  bulbs: {
+    budget: { name: 'IKEA TRADFRI Smart Bulb E27', price: '£8–£15 each', url: 'https://www.amazon.co.uk/s?k=IKEA+TRADFRI+smart+bulb&tag=filce-21' },
+    mid:    { name: 'TP-Link Tapo L530E Smart Bulb', price: '£12–£18 each', url: 'https://www.amazon.co.uk/s?k=TP-Link+Tapo+L530E&tag=filce-21' },
+    premium:{ name: 'Philips Hue White & Colour Ambiance', price: '£35–£55 each', url: 'https://www.amazon.co.uk/s?k=Philips+Hue+White+Colour+Ambiance+E27&tag=filce-21' },
+    unitLow: 8, unitHigh: 55
+  },
+  plugs: {
+    budget: { name: 'Amazon Smart Plug (Alexa)', price: '£12–£15 each', url: 'https://www.amazon.co.uk/s?k=amazon+smart+plug&tag=filce-21' },
+    mid:    { name: 'TP-Link Tapo P110 Smart Plug', price: '£15–£20 each', url: 'https://www.amazon.co.uk/s?k=TP-Link+Tapo+P110&tag=filce-21' },
+    premium:{ name: 'TP-Link Kasa EP25 Energy Monitoring Plug', price: '£20–£28 each', url: 'https://www.amazon.co.uk/s?k=TP-Link+Kasa+EP25&tag=filce-21' },
+    unitLow: 12, unitHigh: 28
+  },
+  sensors: {
+    budget: { name: 'Sonoff SNZB-03 Motion Sensor', price: '£10–£15 each', url: 'https://www.amazon.co.uk/s?k=Sonoff+SNZB-03+motion+sensor&tag=filce-21' },
+    mid:    { name: 'Aqara Motion Sensor P1', price: '£20–£28 each', url: 'https://www.amazon.co.uk/s?k=Aqara+motion+sensor+P1&tag=filce-21' },
+    premium:{ name: 'Philips Hue Motion Sensor', price: '£35–£45 each', url: 'https://www.amazon.co.uk/s?k=Philips+Hue+Motion+Sensor&tag=filce-21' },
+    unitLow: 10, unitHigh: 45
+  },
+  cameras: {
+    budget: { name: 'Reolink E1 Pro Indoor Camera', price: '£25–£40', url: 'https://www.amazon.co.uk/s?k=Reolink+E1+Pro&tag=filce-21' },
+    mid:    { name: 'Reolink Argus 3 Pro Outdoor Camera', price: '£60–£90', url: 'https://www.amazon.co.uk/s?k=Reolink+Argus+3+Pro&tag=filce-21' },
+    premium:{ name: 'Reolink RLC-810A PoE Camera', price: '£80–£120', url: 'https://www.amazon.co.uk/s?k=Reolink+RLC-810A&tag=filce-21' },
+    reviewUrl: 'https://filce.uk/posts/reolink-fisheye-camera-review/',
+    unitLow: 25, unitHigh: 120
+  },
+  speakers: {
+    budget: { name: 'Amazon Echo Dot (5th Gen)', price: '£35–£55', url: 'https://www.amazon.co.uk/s?k=Amazon+Echo+Dot+5th+gen&tag=filce-21' },
+    mid:    { name: 'Amazon Echo (4th Gen)', price: '£70–£90', url: 'https://www.amazon.co.uk/s?k=Amazon+Echo+4th+gen&tag=filce-21' },
+    premium:{ name: 'Amazon Echo Studio', price: '£150–£200', url: 'https://www.amazon.co.uk/s?k=Amazon+Echo+Studio&tag=filce-21' },
+    unitLow: 35, unitHigh: 200
+  }
+};
+
+// Multiplier per room (some devices make sense per-room, others once)
+const ROOM_MULTIPLIERS = {
+  bulbs: true,   // multiply by rooms
+  plugs: true,
+  sensors: true,
+  cameras: true,
+  speakers: false // typically one or two, not per-room
+};
+
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const rooms = [...document.querySelectorAll('input[name="room"]:checked')].map(i => i.value);
+  const devices = [...document.querySelectorAll('input[name="device"]:checked')].map(i => i.value);
+  const tier = document.querySelector('input[name="tier"]:checked').value;
+
+  if (!rooms.length || !devices.length) {
+    document.getElementById('calc-results').innerHTML = `
+      <div class="results-placeholder"><p>⚠️ Please select at least one room and one device type.</p></div>`;
+    return;
+  }
+
+  let totalLow = 0, totalHigh = 0;
+  const items = [];
+
+  for (const dev of devices) {
+    const data = PRODUCTS[dev];
+    const prod = data[tier];
+    const qty = ROOM_MULTIPLIERS[dev] ? rooms.length : 1;
+    const low = data.unitLow * qty;
+    const high = data.unitHigh * qty;
+    totalLow += low;
+    totalHigh += high;
+
+    let extra = '';
+    if (dev === 'cameras' && data.reviewUrl) {
+      extra = ` · <a href="${data.reviewUrl}" rel="noopener">Read our camera review</a>`;
+    }
+
+    items.push(`
+      <li>
+        <a href="${prod.url}" rel="sponsored noopener" target="_blank">${prod.name}</a>
+        <span class="prod-price">${prod.price} · qty: ${qty}${extra}</span>
+      </li>`);
+  }
+
+  const roomLabel = rooms.length === 1 ? '1 room' : `${rooms.length} rooms`;
+
+  document.getElementById('calc-results').innerHTML = `
+    <div class="result-estimate">
+      <h3>💰 Your estimate</h3>
+      <p style="color:var(--color-text-muted);font-size:var(--size-sm);margin-bottom:.75rem">${roomLabel} · ${devices.length} device type${devices.length > 1 ? 's' : ''} · ${tier} tier</p>
+      <div class="cost-range">
+        <span class="cost-badge low">From £${totalLow}</span>
+        <span style="align-self:center;color:var(--color-text-muted)">to</span>
+        <span class="cost-badge high">Up to £${totalHigh}</span>
+      </div>
+      <p style="color:var(--color-text-muted);font-size:var(--size-sm)">Estimate based on typical UK retail prices, mid-2025.</p>
+    </div>
+    <div class="result-products">
+      <h3>🛒 Your shopping list</h3>
+      <ul class="product-list">${items.join('')}</ul>
+    </div>
+    <p class="result-disclaimer">As an Amazon Associate I earn from qualifying purchases. Prices are estimates and may vary. Links open Amazon UK with affiliate tag filce-21.</p>
+  `;
+});
+</script>
+
+</BaseLayout>
