@@ -3,7 +3,7 @@ title: "GiGaPlus 4-Port 2.5G PoE Switch + 10G SFP+ Cards Review — Unlocking Sk
 date: 2026-04-16
 description: "Upgraded to Sky's 5Gbps XGS-PON broadband and needed the hardware to actually use it. Here's the GiGaPlus 2.5G PoE switch and 10G SFP+ cards that made it happen — and what to know about the heat."
 category: "Home Automation"
-rating: 4.5
+rating: 4
 product: "GiGaPlus GP-S25-0402P 4-Port 2.5G PoE Switch with 2x10G SFP+"
 brand: "GiGaPlus"
 price: "£79.99"
@@ -15,7 +15,7 @@ tags: ["homelab", "networking", "poe", "home-automation", "gigaplus", "10g", "sf
 
 # GiGaPlus 4-Port 2.5G PoE Switch + 10G SFP+ Cards Review
 
-**Rating: ⭐⭐⭐⭐½ (4.5/5)**
+**Rating: ⭐⭐⭐⭐ (4/5)**
 
 ---
 
@@ -74,6 +74,8 @@ If you're worried, add a small cabinet fan. Don't let the heat reviews put you o
 ## Build Quality and Installation
 
 The switch is solid metal, compact (half-width rack), and completely fanless — silent operation. Installation is plug-and-play; unmanaged means no configuration required.
+
+**One frustration: no rack ears included.** For a switch clearly designed to live in a rack, this is a disappointing omission. I had to source my own mounting ears separately — and the generic 19-inch rack mount kit I bought first didn't fit properly. Getting the right ears for this specific unit took an extra purchase. Factor that in if you're rack-mounting it.
 
 The SFP+ modules drop straight in. The server-side PCIe card ([5G PCIe Network Card with Realtek RTL8126](https://www.amazon.co.uk/dp/B0CH641FXL?tag=filce-21)) was equally straightforward — slot in, install driver, done.
 
