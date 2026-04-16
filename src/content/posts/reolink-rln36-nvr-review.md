@@ -78,7 +78,7 @@ If you're serious about home security and want a long-term recording solution, t
 
 - [Reolink RLN36 NVR — Amazon UK](https://www.amazon.co.uk/dp/B0CW19WQVK?tag=filce-21)
 - [WD Red 4TB NAS Drive (x3 recommended) — Amazon UK](https://www.amazon.co.uk/dp/B08TZPS4QQ?tag=filce-21)
-- [YuanLey 18-Port PoE Switch — Amazon UK](https://www.amazon.co.uk/dp/B09VBJ2TZP?tag=filce-21)
+- [YuanLey 18-Port PoE Switch review + Amazon UK link](/posts/yuanley-18-port-poe-switch-review/)
 
 ---
 
