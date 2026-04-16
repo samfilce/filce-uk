@@ -98,7 +98,7 @@ The Nextcloud Cookbook app is the hidden gem here. It scrapes recipes from any U
 This build is working well day-to-day, but I'm still adding to it:
 
 - **More cameras on the dashboard** — I'm adding our Reolink camera feeds directly to the HA dashboard view on this screen
-- **Seasonal themes** — we change the Home Assistant dashboard theme to match Penny's kitchen decor (she changes things up seasonally, so the display follows)
+- **Seasonal themes** — we change the Home Assistant dashboard theme to match Penny's kitchen decor. We just swapped from Easter to a summer theme — it's a small thing but it makes the display feel like part of the home rather than a piece of tech stuck on the wall
 - **Voice control** — considering adding a mic so we can interact with HA without touching the screen when hands are messy
 
 I'll update this post as those features come together.
