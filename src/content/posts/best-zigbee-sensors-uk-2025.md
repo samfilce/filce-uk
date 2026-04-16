@@ -1,4 +1,6 @@
 ---
+featuredImage: "/images/best-zigbee-sensors-uk-2025.jpg"
+featuredImageAlt: "Best Zigbee sensors UK 2025 — compact smart home motion sensor"
 title: "Best Zigbee Sensors UK 2025 — Top Motion & Door Sensors for Home Assistant"
 date: 2026-04-15
 description: "The best Zigbee motion sensors and door sensors for UK homes in 2025. Aqara, Philips Hue, SONOFF, and Xiaomi tested with Home Assistant — find the right sensor for your setup."

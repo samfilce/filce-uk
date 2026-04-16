@@ -1,4 +1,6 @@
 ---
+featuredImage: "/images/best-nas-home-lab-uk-2025.jpg"
+featuredImageAlt: "Best NAS for home lab UK 2025 — compact desktop NAS drive"
 title: "Best NAS for Home Lab UK 2025 — Synology, QNAP & WD Compared"
 date: 2026-04-15
 description: "The best NAS drives for UK home labs in 2025. Synology DS223, DS423+, QNAP TS-233, and WD My Cloud Home compared for storage, Docker, media serving, and value."

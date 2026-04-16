@@ -1,4 +1,6 @@
 ---
+featuredImage: "/images/best-smart-plugs-uk-2025.jpg"
+featuredImageAlt: "Best smart plugs UK 2025 — compact UK smart plug with energy monitoring"
 title: "Best Smart Plugs UK 2025 — Tested & Ranked for Home Automation"
 date: 2026-04-15
 description: "The best smart plugs available in the UK right now, tested for reliability, energy monitoring, and Home Assistant compatibility. TP-Link Tapo, Amazon, Meross, and IKEA compared."
