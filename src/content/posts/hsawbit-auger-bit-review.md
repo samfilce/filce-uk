@@ -5,6 +5,8 @@ category: "Tools"
 rating: 4.5
 affiliate: true
 description: "A first-hand review of the hsawbit 40x155mm wood auger bit, which made drilling joists far easier than a spade bit and comes in a surprisingly useful storage case."
+featuredImage: "/images/hsawbit-auger-bit.jpg"
+featuredImageAlt: "hsawbit 40x155mm wood auger bit shown in and out of its plastic storage case, label showing 40x155 dimensions"
 ---
 
 I bought the hsawbit 40x155mm auger bit for a very specific job: drilling joists so I could run waste pipework. I had already tried using a spade bit, and honestly, it was nowhere near as good for this kind of work. Switching to this auger bit made a huge difference straight away.
