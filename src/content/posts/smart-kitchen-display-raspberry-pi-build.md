@@ -63,7 +63,7 @@ Setup is Pi OS (Bookworm, 64-bit). I configured Chromium to launch in kiosk mode
 
 The ONKRON R1-B is a 360° rotating wall mount for screens up to 35 inches. We mounted it portrait (vertical) as our default — it fits the wall space better and works perfectly for recipe browsing. The rotation means we can swing it landscape if we want to watch something while cooking.
 
-Installation was straightforward. The bracket attaches to the wall with four screws, the VESA plate mounts to the back of the monitor (75×75 or 100×100 — ours is 100×100), and it clicks in. One cable runs from the Pi to the monitor (USB-C for power + display) and a USB-A for touch, then power to the smart plug.
+Installation was straightforward. The bracket attaches to the wall with four screws, the VESA plate mounts to the back of the monitor (75×75 or 100×100 — ours is 100×100), and it clicks in. The Pi is USB powered — one cable runs from the Pi to the monitor (USB-C for power + display) and a USB-A for touch, then power to the smart plug. The Pi connects to our home WiFi; no Ethernet or PoE needed for this setup.
 
 ---
 
@@ -82,6 +82,7 @@ The plugs are the ZigBee Smart Plug 13A UK from Amazon — four-pack, energy mon
 ## Software Stack
 
 - **OS:** Raspberry Pi OS Bookworm (64-bit)
+- **Connectivity:** WiFi, USB-powered (no Ethernet required)
 - **Display manager:** Chromium in kiosk mode, auto-launch on boot
 - **Recipes:** [Nextcloud Cookbook](https://apps.nextcloud.com/apps/cookbook) — self-hosted on our Unraid homelab, recipes imported from URLs or added manually
 - **Dashboard:** Home Assistant (running on the homelab, accessed via local IP)
