@@ -5,6 +5,8 @@ category: "Tools"
 rating: 4
 affiliate: true
 description: "A practical hands-on review of the DURI bi-metal hole saw set, which offers very good value and solid cutting performance, despite weak packaging."
+featuredImage: "/images/duri-hole-saw-set.jpg"
+featuredImageAlt: "DURI bi-metal hole saw set unboxed showing full range of sizes plus one saw mounted on arbor"
 ---
 
 I picked up the DURI bi-metal hole saw set mainly because I needed a larger size and noticed the full set was not much more expensive than buying a single 80mm hole saw on its own. On value alone, it made sense, and after using it, I’d say that was the right call.
