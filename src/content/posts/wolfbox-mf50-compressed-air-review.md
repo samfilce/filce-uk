@@ -5,6 +5,8 @@ description: "A cordless compressed air duster that's become indispensable for P
 category: "Tech"
 rating: 4.5
 tags: ["tech", "cleaning", "pc-building", "pets"]
+featuredImage: "/images/wolfbox-mf50-air-duster.jpg"
+featuredImageAlt: "WOLFBOX MF50 cordless air duster in black and orange, showing the pistol grip design and WOLFBOX branding"
 ---
 
 # WOLFBOX MF50 Compressed Air Duster Review
