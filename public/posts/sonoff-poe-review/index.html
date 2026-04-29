@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SONOFF Zigbee/Thread PoE Controller Review — Filce.uk</title>
+  <meta name="description" content="Upgraded from a USB stick — the difference in stability is night and day." />
+  <meta name="author" content="Sam Filce" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SONOFF Zigbee/Thread PoE Controller Review" />
+  <meta property="og:description" content="Upgraded from a USB stick — the difference in stability is night and day." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://filce.uk/posts/sonoff-poe-review/" />
+  <meta property="og:site_name" content="Filce.uk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SONOFF Zigbee/Thread PoE Controller Review" />
+  <meta name="twitter:description" content="Upgraded from a USB stick — the difference in stability is night and day." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://filce.uk/posts/sonoff-poe-review/" />
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://filce.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Home Automation",
+        "item": "https://filce.uk/categories/home-automation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SONOFF Zigbee/Thread PoE Controller Review",
+        "item": "https://filce.uk/posts/sonoff-poe-review/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo" aria-label="Filce.uk home">
+      <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Categories <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/categories/tech/" role="menuitem">Tech</a></li>
+            <li><a href="/categories/home-automation/" role="menuitem">Home Automation</a></li>
+            <li><a href="/categories/homelabs/" role="menuitem">Homelabs</a></li>
+            <li><a href="/categories/gaming-accessories/" role="menuitem">Gaming Accessories</a></li>
+            <li><a href="/categories/tools/" role="menuitem">Tools</a></li>
+            <li><a href="/categories/home-renovation/" role="menuitem">Home Renovation</a></li>
+            <li><a href="/categories/3d-printing/" role="menuitem">3D Printing</a></li>
+            <li><a href="/categories/photography-video/" role="menuitem">Photography & Video</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  }
+  // Dropdown toggle
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', () => {
+      const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+      dropdownToggle.setAttribute('aria-expanded', !expanded);
+      dropdownMenu.classList.toggle('open');
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        dropdownMenu.classList.remove('open');
+      }
+    });
+  }
+</script>
+
+
+  <main id="main-content">
+    
+<article class="post-full">
+  <div class="container post-container">
+    <header class="post-header">
+      
+      <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
+      
+      <h1 class="post-title">SONOFF Zigbee/Thread PoE Controller Review</h1>
+      <div class="post-meta">
+        <time datetime="2026-04-08">08 April 2026</time>
+        <span class="meta-sep">·</span>
+        <span class="reading-time">3 min read</span>
+      </div>
+      
+      <p class="post-excerpt">Upgraded from a USB stick — the difference in stability is night and day.</p>
+      
+    </header>
+
+    
+    <div class="post-hero">
+      <img src="/images/sonoff-poe.jpg" alt="SONOFF Zigbee/Thread PoE Controller Review" class="post-hero-image" loading="eager" />
+    </div>
+    
+
+    <div class="post-content prose">
+      <p>If you've got a sizeable Zigbee setup and you're still running a USB coordinator, this review is for you. I recently made the switch to the SONOFF Zigbee/Thread PoE Controller and it's genuinely one of the best upgrades I've made to my home automation setup.</p>
+<h2>The Problem I Was Trying to Solve</h2>
+<p>I had around 50 Zigbee devices spread across the house, all running through a USB coordinator adapter. On paper, that should work fine — but in practice it was a mess. The USB stick didn't play nicely on an extension cable, and because it was tucked inside the server cabinet, the range was severely limited. Devices would connect, drop out, reconnect — constantly. Automations would fail silently. It was frustrating.</p>
+<p>I tried repositioning the USB stick, running longer cables, the lot. Nothing stuck. The fundamental problem was the USB coordinator just wasn't up to the job for a network of this size.</p>
+<p><img src="/images/sonoff-poe.jpg" alt="SONOFF Zigbee/Thread PoE Controller mounted on wall with PoE cable connected"></p>
+<h2>The Upgrade</h2>
+<p>The SONOFF PoE Controller solves the problem in the most elegant way: it's powered and connected over a single Ethernet cable via PoE, so you can mount it wherever you actually need it. In my case, PoE meant I could position it in the centre of the house rather than having it tethered to the server. Now it's mounted on a wall with clear line of sight to most of the house.</p>
+<p>Migration in Home Assistant was straightforward. The ZHA integration picked it up without any drama, and my existing devices re-joined with minimal fuss. The whole migration took less than an hour, including the physical mounting.</p>
+<h2>How It's Performing</h2>
+<p>Since installation — rock solid. No drop outs, no phantom disconnections, no failed automations. All 50-odd devices are connecting reliably. It's been running continuously without a hiccup.</p>
+<p>The dual antennas clearly make a difference compared to the internal antenna on a USB stick, especially through thick walls. I've got some devices at the far end of the house that were borderline before — they're now stable.</p>
+<h2>Extra Features (That I Haven't Used)</h2>
+<p>The controller apparently also supports WiFi AP mode and has some additional networking features built in. I haven't touched any of that — for my use case it's purely a Zigbee coordinator — but it's good to know there's headroom there if needed.</p>
+<h2>Pros</h2>
+<ul>
+<li>Rock-solid stability with a large device count (50+)</li>
+<li>PoE means flexible placement — put it where coverage is needed, not where USB ports are</li>
+<li>Simple migration in Home Assistant (ZHA)</li>
+<li>Dual antennas for better range</li>
+<li>Supports both Zigbee and Thread protocols</li>
+</ul>
+<h2>Cons</h2>
+<ul>
+<li>Overkill if you only have a handful of devices in a small flat</li>
+<li>Requires a PoE-capable switch or injector (most home servers/NAS setups already have this)</li>
+<li>Pricier than a basic USB coordinator</li>
+</ul>
+<h2>Who Should Buy This</h2>
+<p>If you've got a large Zigbee network (30+ devices), a multi-storey home, thick walls, or you've been fighting drop outs with a USB stick — this will likely fix your problems. If you've got 10 devices in a two-bed flat, a decent USB coordinator is probably sufficient.</p>
+<p>For me, it's been a genuinely transformative upgrade. The network went from unreliable to completely stable overnight. Worth every penny.</p>
+<p><strong><a href="https://www.amazon.co.uk/s?k=sonoff+zigbee+poe+controller&amp;tag=filce-21">Check current price on Amazon →</a></strong></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <div class="post-affiliate-note">
+        <p>🔗 Some links above may be Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases — at no extra cost to you.</p>
+      </div>
+      <a href="/" class="back-link">← Back to all posts</a>
+    </footer>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="site-logo" aria-label="Filce.uk home">
+          <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+        </a>
+        <p class="footer-tagline">Honest reviews. Real gear. No fluff.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="affiliate-disclosure">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Links marked with ★ may be affiliate links — I only recommend things I've actually used.
+      </p>
+      <p class="copyright">© 2026 Sam Filce · filce.uk</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

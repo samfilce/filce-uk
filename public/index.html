@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filce.uk — Honest UK Tech Reviews, Home Automation &amp; Gear — Filce.uk</title>
+  <meta name="description" content="Real reviews of the tech, tools and gear Sam actually buys and uses. Home automation, 3D printing, homelabs, and more." />
+  <meta name="author" content="Sam Filce" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Filce.uk — Honest UK Tech Reviews, Home Automation &amp; Gear" />
+  <meta property="og:description" content="Real reviews of the tech, tools and gear Sam actually buys and uses. Home automation, 3D printing, homelabs, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filce.uk/" />
+  <meta property="og:site_name" content="Filce.uk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Filce.uk — Honest UK Tech Reviews, Home Automation &amp; Gear" />
+  <meta name="twitter:description" content="Real reviews of the tech, tools and gear Sam actually buys and uses. Home automation, 3D printing, homelabs, and more." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://filce.uk/" />
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://filce.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Filce.uk — Honest UK Tech Reviews, Home Automation &amp; Gear",
+        "item": "https://filce.uk/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo" aria-label="Filce.uk home">
+      <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Categories <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/categories/tech/" role="menuitem">Tech</a></li>
+            <li><a href="/categories/home-automation/" role="menuitem">Home Automation</a></li>
+            <li><a href="/categories/homelabs/" role="menuitem">Homelabs</a></li>
+            <li><a href="/categories/gaming-accessories/" role="menuitem">Gaming Accessories</a></li>
+            <li><a href="/categories/tools/" role="menuitem">Tools</a></li>
+            <li><a href="/categories/home-renovation/" role="menuitem">Home Renovation</a></li>
+            <li><a href="/categories/3d-printing/" role="menuitem">3D Printing</a></li>
+            <li><a href="/categories/photography-video/" role="menuitem">Photography & Video</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  }
+  // Dropdown toggle
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', () => {
+      const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+      dropdownToggle.setAttribute('aria-expanded', !expanded);
+      dropdownMenu.classList.toggle('open');
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        dropdownMenu.classList.remove('open');
+      }
+    });
+  }
+</script>
+
+
+  <main id="main-content">
+    
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Personal reviews from a UK tinkerer</p>
+      <h1 class="hero-title">Gear I've actually bought.<br>Takes I actually have.</h1>
+      <p class="hero-desc">No press samples, no sponsored posts — just honest thoughts on the tech and tools that make their way into my home.</p>
+      <a href="/about/" class="btn btn-primary">About me</a>
+    </div>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest posts</h2>
+      <p class="section-sub">Fresh from the workshop, server rack, or Amazon box.</p>
+    </div>
+
+    
+    <div class="post-grid">
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <div class="post-card-placeholder" aria-hidden="true">
+            <span>Tools</span>
+          </div>
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/tools/" class="post-category-tag">Tools</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/best-diy-tools-uk-2026/">Best DIY Tools for Home Improvement UK 2026 — Tried &amp; Tested</a>
+          </h3>
+          
+          <p class="post-card-excerpt">The best DIY tools for UK home improvers in 2026, tested hands-on. From hole saws to utility knives — honest picks that earn their place in your kit.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-29">29 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <div class="post-card-placeholder" aria-hidden="true">
+            <span>Kitchen/Home</span>
+          </div>
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/kitchenhome/" class="post-category-tag">Kitchen/Home</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/candy-floss-machine-review/">Industrial Candy Floss Machine Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">An honest first-hand review of an industrial-style candy floss machine that makes brilliant floss, but comes with awful instructions and pricey accessories.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-09">09 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <div class="post-card-placeholder" aria-hidden="true">
+            <span>Tools</span>
+          </div>
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/tools/" class="post-category-tag">Tools</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/duri-bi-metal-hole-saw-set-review/">DURI Bi-Metal Hole Saw Set Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">A practical hands-on review of the DURI bi-metal hole saw set, which offers very good value and solid cutting performance, despite weak packaging.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-09">09 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <div class="post-card-placeholder" aria-hidden="true">
+            <span>Tools</span>
+          </div>
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/tools/" class="post-category-tag">Tools</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/hsawbit-auger-bit-review/">hsawbit 40x155mm Auger Bit Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">A first-hand review of the hsawbit 40x155mm wood auger bit, which made drilling joists far easier than a spade bit and comes in a surprisingly useful storage case.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-09">09 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <div class="post-card-placeholder" aria-hidden="true">
+            <span>Tech/Accessories</span>
+          </div>
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/techaccessories/" class="post-category-tag">Tech/Accessories</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/miracase-iphone-17-pro-max-review/">Miracase Magnetic Case for iPhone 17 Pro Max Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">An honest long-term review of the Miracase magnetic case for iPhone 17 Pro Max, with good protection and responsiveness but a frustrating dust problem.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-09">09 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/milwaukee-fastback.jpg" alt="Milwaukee FASTBACK Folding Utility Knife Review" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/tools/" class="post-category-tag">Tools</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/milwaukee-knife-review/">Milwaukee FASTBACK Folding Utility Knife Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">A serious upgrade from cheap utility knives — the build quality is in a different league.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-08">08 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/pet-corrector.jpg" alt="Pet Corrector Dog Trainer Review — Does It Actually Work?" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/pet/" class="post-category-tag">Pet</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/pet-corrector-dog-trainer-review/">Pet Corrector Dog Trainer Review — Does It Actually Work?</a>
+          </h3>
+          
+          <p class="post-card-excerpt">A simple canister that releases a sharp hiss — and actually stopped our Malamute puppy&#39;s biting in days.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-08">08 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/sonoff-poe.jpg" alt="SONOFF Zigbee/Thread PoE Controller Review" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
+          
+          <h3 class="post-card-title">
+            <a href="/posts/sonoff-poe-review/">SONOFF Zigbee/Thread PoE Controller Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">Upgraded from a USB stick — the difference in stability is night and day.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-08">08 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/ha-guide-cover.jpg" alt="Getting Started with Home Assistant: What I Wish I&#39;d Known" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
+          
+          <h3 class="post-card-title">
+            <a href="/reviews/getting-started-home-assistant/">Getting Started with Home Assistant: What I Wish I&#39;d Known</a>
+          </h3>
+          
+          <p class="post-card-excerpt">Home Assistant is genuinely great — but the learning curve is real. Here&#39;s what I&#39;d tell myself on day one, plus a guide that goes deeper.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2025-01-22">22 January 2025</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/welcome-header.jpg" alt="Welcome to Filce.uk" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          
+          <a href="/categories/tech/" class="post-category-tag">Tech</a>
+          
+          <h3 class="post-card-title">
+            <a href="/reviews/welcome-to-filce-uk/">Welcome to Filce.uk</a>
+          </h3>
+          
+          <p class="post-card-excerpt">A quick introduction to the site — what it is, what I&#39;ll be writing about, and why I started it.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2025-01-15">15 January 2025</time>
+            <span class="meta-sep">·</span>
+            <span>2 min read</span>
+          </div>
+        </div>
+      </article>
+      
+    </div>
+    
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="container">
+    <h2 class="section-title">Browse by category</h2>
+    <div class="category-grid">
+      <a href="/categories/tech/" class="category-card">
+        <span class="category-icon">💻</span>
+        <span class="category-name">Tech</span>
+      </a>
+      <a href="/categories/home-automation/" class="category-card">
+        <span class="category-icon">🏠</span>
+        <span class="category-name">Home Automation</span>
+      </a>
+      <a href="/categories/homelabs/" class="category-card">
+        <span class="category-icon">🖥️</span>
+        <span class="category-name">Homelabs</span>
+      </a>
+      <a href="/categories/gaming-accessories/" class="category-card">
+        <span class="category-icon">🎮</span>
+        <span class="category-name">Gaming Accessories</span>
+      </a>
+      <a href="/categories/tools/" class="category-card">
+        <span class="category-icon">🔧</span>
+        <span class="category-name">Tools</span>
+      </a>
+      <a href="/categories/home-renovation/" class="category-card">
+        <span class="category-icon">🪚</span>
+        <span class="category-name">Home Renovation</span>
+      </a>
+      <a href="/categories/3d-printing/" class="category-card">
+        <span class="category-icon">🖨️</span>
+        <span class="category-name">3D Printing</span>
+      </a>
+      <a href="/categories/photography-video/" class="category-card">
+        <span class="category-icon">📷</span>
+        <span class="category-name">Photography & Video</span>
+      </a>
+      <a href="/categories/pet/" class="category-card">
+        <span class="category-icon">🐕</span>
+        <span class="category-name">Pet</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="site-logo" aria-label="Filce.uk home">
+          <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+        </a>
+        <p class="footer-tagline">Honest reviews. Real gear. No fluff.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="affiliate-disclosure">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Links marked with ★ may be affiliate links — I only recommend things I've actually used.
+      </p>
+      <p class="copyright">© 2026 Sam Filce · filce.uk</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filce.uk</title>
+  <meta name="description" content="Honest reviews of the tech, tools and gear I actually use — from home automation to 3D printing and beyond." />
+  <meta name="author" content="Sam Filce" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Filce.uk" />
+  <meta property="og:description" content="Honest reviews of the tech, tools and gear I actually use." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filce.uk/categories/home-automation/" />
+  <meta property="og:site_name" content="Filce.uk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Filce.uk" />
+  <meta name="twitter:description" content="Honest reviews of the tech, tools and gear I actually use." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://filce.uk/categories/home-automation/" />
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://filce.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Home Automation",
+        "item": "https://filce.uk/categories/home-automation/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "",
+        "item": "https://filce.uk/categories/home-automation/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo" aria-label="Filce.uk home">
+      <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Categories <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/categories/tech/" role="menuitem">Tech</a></li>
+            <li><a href="/categories/home-automation/" role="menuitem">Home Automation</a></li>
+            <li><a href="/categories/homelabs/" role="menuitem">Homelabs</a></li>
+            <li><a href="/categories/gaming-accessories/" role="menuitem">Gaming Accessories</a></li>
+            <li><a href="/categories/tools/" role="menuitem">Tools</a></li>
+            <li><a href="/categories/home-renovation/" role="menuitem">Home Renovation</a></li>
+            <li><a href="/categories/3d-printing/" role="menuitem">3D Printing</a></li>
+            <li><a href="/categories/photography-video/" role="menuitem">Photography & Video</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  }
+  // Dropdown toggle
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', () => {
+      const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+      dropdownToggle.setAttribute('aria-expanded', !expanded);
+      dropdownMenu.classList.toggle('open');
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        dropdownMenu.classList.remove('open');
+      }
+    });
+  }
+</script>
+
+
+  <main id="main-content">
+    
+
+
+<section class="hero category-hero">
+  <div class="container">
+    <h1 class="hero-title">Home Automation Reviews</h1>
+    <p class="hero-desc">2 posts in this category</p>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <div class="post-grid">
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/sonoff-poe.jpg" alt="SONOFF Zigbee/Thread PoE Controller Review" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
+          <h3 class="post-card-title">
+            <a href="/posts/sonoff-poe-review/">SONOFF Zigbee/Thread PoE Controller Review</a>
+          </h3>
+          
+          <p class="post-card-excerpt">Upgraded from a USB stick — the difference in stability is night and day.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2026-04-08">08 April 2026</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-image">
+          
+          <img src="/images/ha-guide-cover.jpg" alt="Getting Started with Home Assistant: What I Wish I&#39;d Known" loading="lazy" />
+          
+        </div>
+        <div class="post-card-body">
+          <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
+          <h3 class="post-card-title">
+            <a href="/reviews/getting-started-home-assistant/">Getting Started with Home Assistant: What I Wish I&#39;d Known</a>
+          </h3>
+          
+          <p class="post-card-excerpt">Home Assistant is genuinely great — but the learning curve is real. Here&#39;s what I&#39;d tell myself on day one, plus a guide that goes deeper.</p>
+          
+          <div class="post-card-meta">
+            <time datetime="2025-01-22">22 January 2025</time>
+            <span class="meta-sep">·</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </article>
+      
+    </div>
+    
+    <a href="/" class="back-link">← Back to all posts</a>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="site-logo" aria-label="Filce.uk home">
+          <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+        </a>
+        <p class="footer-tagline">Honest reviews. Real gear. No fluff.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="affiliate-disclosure">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Links marked with ★ may be affiliate links — I only recommend things I've actually used.
+      </p>
+      <p class="copyright">© 2026 Sam Filce · filce.uk</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

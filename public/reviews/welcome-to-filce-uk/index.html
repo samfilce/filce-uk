@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Filce.uk — Filce.uk</title>
+  <meta name="description" content="A quick introduction to the site — what it is, what I&#39;ll be writing about, and why I started it." />
+  <meta name="author" content="Sam Filce" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Welcome to Filce.uk" />
+  <meta property="og:description" content="A quick introduction to the site — what it is, what I&#39;ll be writing about, and why I started it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://filce.uk/reviews/welcome-to-filce-uk/" />
+  <meta property="og:site_name" content="Filce.uk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Welcome to Filce.uk" />
+  <meta name="twitter:description" content="A quick introduction to the site — what it is, what I&#39;ll be writing about, and why I started it." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://filce.uk/reviews/welcome-to-filce-uk/" />
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://filce.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tech",
+        "item": "https://filce.uk/categories/tech/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Welcome to Filce.uk",
+        "item": "https://filce.uk/reviews/welcome-to-filce-uk/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo" aria-label="Filce.uk home">
+      <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Categories <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/categories/tech/" role="menuitem">Tech</a></li>
+            <li><a href="/categories/home-automation/" role="menuitem">Home Automation</a></li>
+            <li><a href="/categories/homelabs/" role="menuitem">Homelabs</a></li>
+            <li><a href="/categories/gaming-accessories/" role="menuitem">Gaming Accessories</a></li>
+            <li><a href="/categories/tools/" role="menuitem">Tools</a></li>
+            <li><a href="/categories/home-renovation/" role="menuitem">Home Renovation</a></li>
+            <li><a href="/categories/3d-printing/" role="menuitem">3D Printing</a></li>
+            <li><a href="/categories/photography-video/" role="menuitem">Photography & Video</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  }
+  // Dropdown toggle
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', () => {
+      const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+      dropdownToggle.setAttribute('aria-expanded', !expanded);
+      dropdownMenu.classList.toggle('open');
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        dropdownMenu.classList.remove('open');
+      }
+    });
+  }
+</script>
+
+
+  <main id="main-content">
+    
+<article class="post-full">
+  <div class="container post-container">
+    <header class="post-header">
+      
+      <a href="/categories/tech/" class="post-category-tag">Tech</a>
+      
+      <h1 class="post-title">Welcome to Filce.uk</h1>
+      <div class="post-meta">
+        <time datetime="2025-01-15">15 January 2025</time>
+        <span class="meta-sep">·</span>
+        <span class="reading-time">2 min read</span>
+      </div>
+      
+      <p class="post-excerpt">A quick introduction to the site — what it is, what I&#39;ll be writing about, and why I started it.</p>
+      
+    </header>
+
+    
+    <div class="post-hero">
+      <img src="/images/welcome-header.jpg" alt="Welcome to Filce.uk" class="post-hero-image" loading="eager" />
+    </div>
+    
+
+    <div class="post-content prose">
+      <p>Right then. First post.</p>
+<p>I've been meaning to start this for a while. I spend a lot of time researching gear before I buy it — reading forums, watching YouTube reviews, comparing specs — and I figured I might as well put my own thoughts somewhere useful while I'm at it.</p>
+<h2>What this site is</h2>
+<p>Filce.uk is where I write honest reviews of the tech, tools, and gear I actually use. No press samples, no sponsored content, no affiliate-first thinking. I buy things (sometimes against my better judgement), use them properly, and then write about them.</p>
+<p>If you've been burned by a glowing 5-star review that turned out to be written by someone who got the thing for free and tested it for two days — same. This is the antidote to that.</p>
+<h2>What I'll be covering</h2>
+<p>I work in telecoms and spend a frankly unreasonable amount of time tinkering at home. That means:</p>
+<ul>
+<li><strong>Home Automation</strong> — I'm deep into Home Assistant. Expect guides, product reviews, and probably a few cautionary tales about automations that didn't quite work as planned.</li>
+<li><strong>Homelabs</strong> — Self-hosted everything. NAS boxes, mini PCs, Proxmox, networking gear.</li>
+<li><strong>3D Printing</strong> — I have a printer (or two). Sometimes things come out well.</li>
+<li><strong>Photography &amp; Video</strong> — I shoot stuff occasionally and own more camera gear than I should.</li>
+<li><strong>Tools &amp; DIY</strong> — I do my own home renovation work. The tools matter.</li>
+<li><strong>Gaming Accessories</strong> — Controllers, headsets, the peripherals that actually make a difference.</li>
+</ul>
+<h2>Affiliate links — the honest bit</h2>
+<p>Some posts will include Amazon affiliate links. If you buy something through them, I get a small cut — at no extra cost to you. I'll always flag when a link is affiliate, and I'll only ever link to things I'd genuinely recommend.</p>
+<p>I'm not trying to turn this into a content farm. I just want it to be useful.</p>
+<p>More posts incoming. Check the <a href="/feed.xml">RSS feed</a> if you want to follow along.</p>
+<p>— Sam</p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <span class="tag">#meta</span>
+        
+        
+        
+        <span class="tag">#welcome</span>
+        
+        
+      </div>
+      
+      <div class="post-affiliate-note">
+        <p>🔗 Some links above may be Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases — at no extra cost to you.</p>
+      </div>
+      <a href="/" class="back-link">← Back to all posts</a>
+    </footer>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="site-logo" aria-label="Filce.uk home">
+          <span class="logo-text">filce<span class="logo-dot">.</span>uk</span>
+        </a>
+        <p class="footer-tagline">Honest reviews. Real gear. No fluff.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="affiliate-disclosure">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Links marked with ★ may be affiliate links — I only recommend things I've actually used.
+      </p>
+      <p class="copyright">© 2026 Sam Filce · filce.uk</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
