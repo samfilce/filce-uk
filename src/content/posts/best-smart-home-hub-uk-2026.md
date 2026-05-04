@@ -240,6 +240,7 @@ Only go Amazon Echo or SmartThings if you're fully committed to those ecosystems
 
 ## Related Reviews
 
+- 🏠 [Best Smart Home Devices UK 2026 — Complete Guide](/posts/best-smart-home-devices-uk-2026/)
 - 🏠 [Getting Started with Home Assistant](/posts/home-assistant-guide/)
 - 📷 [Best PoE Security Cameras UK 2025](/posts/best-poe-security-cameras-uk-2025/)
 - 🔌 [Best Smart Plugs UK 2025](/posts/best-smart-plugs-uk-2025/)

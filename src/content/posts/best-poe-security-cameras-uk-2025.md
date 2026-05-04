@@ -193,7 +193,11 @@ Most PoE cameras are rated to -10°C or lower (check the spec sheet for each mod
 
 All of these integrate well with Home Assistant via RTSP or ONVIF — no cloud subscription, no ongoing costs beyond the hardware.
 
-If you're running a Zigbee-heavy home automation setup alongside your PoE cameras, the [SONOFF PoE Controller](/posts/sonoff-poe-review/) is worth reading — it covers getting PoE-powered smart home devices and cameras working reliably on the same network infrastructure.
+## Related Reviews
+
+- 🏠 [Best Smart Home Devices UK 2026 — Complete Guide](/posts/best-smart-home-devices-uk-2026/)
+- [Reolink Fisheye Camera Review](/posts/reolink-fisheye-camera-review/)
+- [SONOFF PoE Controller Review](/posts/sonoff-poe-review/) — getting PoE-powered devices and cameras working reliably
 
 ---
 
