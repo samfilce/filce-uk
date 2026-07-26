@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Local agent/worktree recovery artefacts
+_backups/
+*.bak
+*.bak.*
+*.backup_*

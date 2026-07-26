@@ -30,7 +30,7 @@ Home Assistant runs on a Raspberry Pi, a mini PC, a NAS, a VM, or a dedicated ap
 
 If you want the easiest starting point, the **Home Assistant Green** is the official plug-and-play box. It's not the cheapest option, but it just works, and that matters when you're starting out.
 
-👉 **[Home Assistant Green on Amazon ★](https://www.amazon.co.uk/dp/B0D2R8JLN6)** — affiliate link, see disclosure below
+👉 **[Home Assistant Green on Amazon ★](https://www.amazon.co.uk/dp/B0D2R8JLN6?tag=filce-21&utm_source=filce.uk&utm_medium=affiliate&utm_campaign=ha-hardware)** — affiliate link, see disclosure below
 
 If you want more horsepower (for running other things alongside HA), something like the Beelink EQ12 is worth a look.
 
@@ -38,9 +38,15 @@ If you want more horsepower (for running other things alongside HA), something l
 
 I've written a much more detailed getting started guide — covering installation, initial setup, integrations, and the automations I'd build first. It covers things the official docs gloss over.
 
-**[Download the complete Home Assistant Getting Started Guide →](https://samfilce.gumroad.com/l/home-assistant-guide)**
+**[Download the complete AI Home Assistant Guide (PDF + EPUB) →](https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=cta&utm_campaign=ha-guide)**
 
-It's a practical PDF guide built from real-world experience. Worth it if you want to get up and running without the frustrating detours.
+Practical 50+ page guide covering installation, integrations, first automations, pet monitoring, and more. Includes the full AI Home Assistant Starter Pack (checklists, 50 automation ideas, device reference).
+
+**[Get the Home Assistant YAML Automation Pack — £12 →](https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=cta&utm_campaign=ha-yaml-pack)**
+
+50 ready-to-use Home Assistant automations for lighting, security, energy, comfort and everyday routines. Copy, paste and adapt them to your setup.
+
+All Amazon hardware links on this site use tag=filce-21. Example: [Home Assistant Green on Amazon ★](https://www.amazon.co.uk/dp/B0D2R8JLN6?tag=filce-21&utm_source=filce.uk&utm_medium=affiliate&utm_campaign=ha-hardware)
 
 If your main use case is keeping an eye on pets, I also wrote a setup guide here: [Home Assistant Pet Monitoring Setup](/posts/home-assistant-pet-monitoring/).
 

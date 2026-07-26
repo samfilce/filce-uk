@@ -19,6 +19,33 @@ const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => pos
     </div>
   </section>
 
+  <section class="posts-section" aria-labelledby="digital-products-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="digital-products-heading">Home Assistant guides &amp; automations</h2>
+        <p class="section-sub">Practical, UK-focused resources built from the systems I run at home.</p>
+      </div>
+      <div class="post-grid">
+        <article class="post-card">
+          <div class="post-card-placeholder" aria-hidden="true"><span>Guide</span></div>
+          <div class="post-card-body">
+            <h3 class="post-card-title">Build Your Own AI Home Assistant</h3>
+            <p class="post-card-excerpt">A practical PDF + EPUB guide to installation, integrations, automations and private local AI.</p>
+            <a href="https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ai-ha-guide" class="btn btn-primary">Get the guide — £9.99</a>
+          </div>
+        </article>
+        <article class="post-card">
+          <div class="post-card-placeholder" aria-hidden="true"><span>YAML Pack</span></div>
+          <div class="post-card-body">
+            <h3 class="post-card-title">Home Assistant YAML Automation Pack</h3>
+            <p class="post-card-excerpt">50 ready-to-use automations for lighting, security, energy, comfort and everyday routines.</p>
+            <a href="https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ha-yaml-pack" class="btn btn-primary">Get the pack — £12</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   {featuredGuides.length > 0 && (
     <section class="posts-section">
       <div class="container">
