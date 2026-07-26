@@ -240,3 +240,21 @@ Start with what you need today, plan for tomorrow, and remember: cable once, cab
 - [Best PoE Switches UK 2026](/posts/best-poe-switches-uk-2026/)
 - [Home Assistant Guide](/posts/home-assistant-guide/)
 - [Home Automation Starter Checklist](/posts/home-automation-starter-checklist/)
+---
+
+## Bottom Line
+
+After walking through a complete home network setup for UK homes in 2026, here are the verdict picks that deliver the best balance of performance, reliability, value, and future-proofing.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [Reolink RLN36 NVR (best for recording)](https://www.amazon.co.uk/Reolink-Surveillance-Recording-Integrated-RLN36/dp/B09YDCCMYD?tag=filce-21)
+- [Reolink Fisheye PoE Camera (best indoor)](https://www.amazon.co.uk/Reolink-Security-Detection-Installation-FE-P-W/dp/B0CF1CCVH5?tag=filce-21)
+- [YuanLey 18-Port PoE Switch (best value switch)](https://www.amazon.co.uk/YuanLey-18-Port-PoE-16-black/dp/B082KNLXVT?tag=filce-21)
+- [GiGaPlus 2.5G PoE Switch (best for 2.5G upgrade)](https://www.amazon.co.uk/s?k=GiGaPlus+2.5G+switch&tag=filce-21)
+
+Start with a good switch and PoE cameras, add NVR or NAS for storage, then layer WiFi 6/6E routers or mesh as needed. All integrate with Home Assistant.
+
+---
+
+*Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*

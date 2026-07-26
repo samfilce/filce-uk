@@ -131,3 +131,22 @@ SFP+ is a slot for 10G fibre or copper modules. You don't *need* it, but it's us
 ---
 
 *This guide contains affiliate links. If you purchase through these links, I earn a small commission at no extra cost to you.*
+
+---
+
+## Bottom Line
+
+After researching 2.5G switches for UK home networks and CCTV in 2026, here are the verdict picks that deliver the best balance of speed, PoE capability, ports, and value.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [GiGaPlus 4-Port 2.5G PoE Switch (best compact PoE)](https://www.amazon.co.uk/s?k=GiGaPlus+2.5G+PoE+switch&tag=filce-21)
+- [YuanLey 18-Port PoE Switch (best value high-port)](https://www.amazon.co.uk/YuanLey-18-Port-PoE-16-black/dp/B082KNLXVT?tag=filce-21)
+- [Best 2.5G switch options on Amazon](https://www.amazon.co.uk/s?k=2.5g+switch&tag=filce-21)
+- [TP-Link 2.5G switch (best budget non-PoE)](https://www.amazon.co.uk/s?k=TP-Link+2.5G+switch&tag=filce-21)
+
+Upgrade your core switch to 2.5G when adding NAS, 10G SFP+ for servers, or multiple PoE cameras. See the full home network guide for integration.
+
+---
+
+*Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*

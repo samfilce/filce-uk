@@ -136,3 +136,22 @@ All three picks above are based on real use in a real house, not specification-s
 ---
 
 *Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*
+
+---
+
+## Bottom Line
+
+After testing these DIY tools hands-on for UK home improvement in 2026, here are the verdict picks that deliver the best balance of performance, reliability, and value.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [Milwaukee FASTBACK Folding Knife (best utility)](https://www.amazon.co.uk/Milwaukee-4932471357-One-handed-Tool-free-Integrated/dp/B082L14L7D?tag=filce-21)
+- [DURI Bi-Metal Hole Saw Set (best value set)](https://www.amazon.co.uk/s?k=DURI+bi-metal+hole+saw+set&tag=filce-21)
+- [hsawbit 40x155mm Wood Auger Bit (best for joists)](https://www.amazon.co.uk/s?k=hsawbit+auger+bit&tag=filce-21)
+- [Milwaukee M18 Fuel Cordless Drill Kit (best power platform)](https://www.amazon.co.uk/s?k=Milwaukee+M18+drill+kit&tag=filce-21)
+
+All three core picks above plus a reliable cordless platform cover the majority of home improvement tasks. Check current prices and deals on Amazon UK.
+
+---
+
+*Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*

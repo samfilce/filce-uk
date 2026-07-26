@@ -208,3 +208,22 @@ For most UK users building a serious smart home — especially those adding [sec
 - [Best Zigbee Sensors UK 2025](/posts/best-zigbee-sensors-uk-2025/) — the sensors that work best with all three platforms
 - [Best PoE Security Cameras UK 2025](/posts/best-poe-security-cameras-uk-2025/) — adding cameras to your smart home setup
 - [Home Assistant Pet Monitoring Build](/posts/home-assistant-pet-monitoring/) — real-world automation example using cameras and sensors
+
+---
+
+## Bottom Line
+
+After comparing Home Assistant, Hubitat, and SmartThings for UK smart homes in 2026, here are the verdict picks that deliver the best balance of features, local control, compatibility, and value — especially for users adding security cameras and automation.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [Home Assistant Green (best plug-and-play HA hub)](https://www.amazon.co.uk/dp/B0D2R8JLN6?tag=filce-21)
+- [Beelink EQ12 Mini PC (best for running HA + more)](https://www.amazon.co.uk/s?k=Beelink+EQ12&tag=filce-21)
+- [Hubitat Elevation C-8 (best local alternative)](https://www.amazon.co.uk/s?k=Hubitat+Elevation&tag=filce-21)
+- [Samsung SmartThings Hub (best beginner option)](https://www.amazon.co.uk/s?k=Samsung+SmartThings+Hub&tag=filce-21)
+
+Home Assistant wins for most serious users. All recommended hardware links use filce-21. See the full getting started guide for setup.
+
+---
+
+*Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*

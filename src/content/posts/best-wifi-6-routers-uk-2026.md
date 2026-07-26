@@ -205,3 +205,21 @@ Yes — most mesh systems can run in access point mode, where they use your exis
 ---
 
 *Links marked ★ are Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases.*
+---
+
+## Bottom Line
+
+After testing WiFi 6 routers and mesh systems for UK homes in 2026, here are the verdict picks that deliver the best balance of coverage, speed, features, and value.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [TP-Link Deco XE75 (best mesh whole-home)](https://www.amazon.co.uk/dp/B0BWRTVNQY?tag=filce-21)
+- [Netgear Nighthawk AX12 (best for speed)](https://www.amazon.co.uk/dp/B08FHGQJHQ?tag=filce-21)
+- [ASUS RT-AX59U (best value)](https://www.amazon.co.uk/dp/B0BXY2Q2X5?tag=filce-21)
+- [TP-Link Archer AXE75 (best single router upgrade)](https://www.amazon.co.uk/dp/B0BWRTVNQY?tag=filce-21)
+
+Pair with a solid switch and PoE setup from the home network guide for a complete reliable system. All work great with Home Assistant.
+
+---
+
+*Prices correct at time of publishing. Affiliate links may be included — they don't affect the recommendation.*
