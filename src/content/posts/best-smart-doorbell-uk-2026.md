@@ -206,6 +206,19 @@ If you're building out your home security setup, these posts go alongside this o
 
 ---
 
+## The Bottom Line
+
+Smart doorbells in the UK start from **£60–£200** one-time. Choose no-subscription options like Reolink or Eufy for local storage and full features without monthly fees. All recommended models integrate with Home Assistant.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+
+- [Reolink PoE Video Doorbell 5MP (best wired no-sub option)](https://www.amazon.co.uk/Reolink-Doorbell-Camera-Visual-Security-Doorbell-PoE/dp/B0B4KCSZ2M?tag=filce-21)
+- [Reolink Wired Video Doorbell 2K+ (Wi-Fi, AI detection)](https://www.amazon.co.uk/Reolink-Doorbell-Dual-Band-Detecttion-Viewing/dp/B0B4KBMDD3?tag=filce-21)
+- [Hikvision Wi-Fi Video Doorbell DS-KB6403-WIP (premium build)](https://www.amazon.co.uk/HIKVISION-Wi-Fi-Video-Doorbell-DS-KB6403-WIP/dp/B07FSS6ZFH?tag=filce-21)
+- [Reolink RLN36 36CH NVR (related recording gear for multiple cams)](https://www.amazon.co.uk/Reolink-Surveillance-Recording-Integrated-RLN36/dp/B09YDCCMYD?tag=filce-21)
+
+Pick your doorbell → add compatible NVR/switch for full local CCTV system.
+
 ## FAQ
 
 ### Do smart doorbells work with UK wiring?
@@ -234,4 +247,4 @@ Look for colour night vision (Eufy E340 has this) or HDR processing (Google Nest
 
 ---
 
-*Prices correct at time of writing. Amazon links are affiliate links — we earn a small commission at no extra cost to you, which helps keep this site running.*
+*Prices correct at time of writing and subject to change. Affiliate links (filce-21) used — these don't affect our recommendations.*

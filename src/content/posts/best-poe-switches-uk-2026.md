@@ -212,3 +212,26 @@ Both are solid for home use. I've run the YuanLey for over a year with zero issu
 ---
 
 *Prices correct at time of writing. Affiliate links used where indicated — clicking them costs you nothing extra and helps support the site.*
+
+
+---
+
+## Bottom Line
+
+After testing and researching PoE switches for home CCTV setups, here are the verdict picks that deliver the best balance of performance, reliability, and value for UK buyers in 2026.
+
+### Verdict Picks
+
+**Best Overall for Most Home CCTV Systems:** [YuanLey 18-Port Gigabit PoE Switch](https://www.amazon.co.uk/dp/B09VBJ2TZP?tag=filce-21) — 250W budget, 16 PoE+ ports, rack-mountable, proven with Reolink cameras.
+
+**Best for High-Speed Home Labs:** [GigaPlus 2.5G PoE Switch](https://www.amazon.co.uk/dp/B0CL6CTCXN?tag=filce-21) — 2.5G ports + 10G SFP+ uplinks for future-proofing.
+
+**Best Value Brand-Name Option:** [TP-Link TL-SG1218P 16-Port PoE Switch](https://www.amazon.co.uk/s?k=TP-Link+TL-SG1218P&tag=filce-21) — Matches YuanLey specs with TP-Link reliability.
+
+**Best for Hikvision & Compatible Systems:** [Hikvision DS-3E0518P-E 16-Port PoE Switch](https://www.amazon.co.uk/s?k=Hikvision+DS-3E0518P&tag=filce-21) — Native compatibility, solid build for CCTV.
+
+*All links are Amazon UK affiliate links (filce-21). Prices and availability fluctuate — check current deals.*
+
+---
+
+*Prices correct at time of writing. Affiliate links used where indicated — clicking them costs you nothing extra and helps support the site.*

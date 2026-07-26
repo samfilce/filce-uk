@@ -158,6 +158,19 @@ LiDAR (Light Detection and Ranging) fires a laser to build a precise map of your
 
 ---
 
+## Bottom Line — Recommended Robot Vacuums (filce-21)
+
+These four picks balance performance, pet-hair handling (especially relevant for Ice), navigation intelligence, and value for UK buyers in 2026. All are Amazon UK affiliate links tagged with filce-21.
+
+- **Roborock S8 MaxV Ultra** — Top flagship: 10,000Pa suction, self-emptying dock, hot water mop washing/drying, advanced obstacle avoidance. Best for large homes with pets. [Shop Roborock S8 MaxV Ultra on Amazon UK](https://www.amazon.co.uk/s?k=roborock+s8+maxv+ultra&tag=filce-21)
+- **Eufy X10 Pro Omni** — Best value premium: 8,000Pa, rotating mops, auto-empty + self-refill, excellent AI avoidance. Great all-rounder for mixed floors. [Shop Eufy X10 Pro Omni on Amazon UK](https://www.amazon.co.uk/s?k=eufy+x10+pro+omni&tag=filce-21)
+- **Roborock Q8 Max+** — Best mid-range: Solid LiDAR mapping, auto-empty dock, 5,500Pa suction at a more accessible price. [Shop Roborock Q8 Max+ on Amazon UK](https://www.amazon.co.uk/s?k=roborock+q8+max+&tag=filce-21)
+- **iRobot Roomba j9+** — Best for pet homes: Superior pet waste detection/avoidance, smart mapping, reliable daily cleaning. [Shop iRobot Roomba j9+ on Amazon UK](https://www.amazon.co.uk/s?k=irobot+roomba+j9+&tag=filce-21)
+
+Prices and availability change frequently — these links help support the site at no extra cost to you.
+
+---
+
 ## Internal Links
 
 For pet owners specifically, we have dedicated guides on [monitoring your dog with cameras](/posts/home-assistant-pet-monitoring/) and [choosing the best pet monitoring cameras](/posts/best-pet-monitoring-cameras-uk-2025/).

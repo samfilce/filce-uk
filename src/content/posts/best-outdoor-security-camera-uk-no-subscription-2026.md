@@ -215,4 +215,22 @@ All of them: no subscription. No ongoing fees. Your footage, your hardware, your
 
 ---
 
+## Bottom Line
+
+After testing and researching subscription-free outdoor security cameras for UK homes in 2026, here are the verdict picks that deliver the best balance of performance, reliability, value, and no ongoing fees.
+
+### Verdict Picks
+
+**Best Overall for Most UK Homes:** [Reolink RLC-810A 4K PoE Camera](https://www.amazon.co.uk/s?k=Reolink+RLC-810A&tag=filce-21) — Reliable 4K PoE, excellent night vision, works with NVRs and Home Assistant.
+
+**Best Wide-Angle Coverage:** [Reolink Fisheye PoE Camera](https://www.amazon.co.uk/s?k=Reolink+fisheye+poe&tag=filce-21) — 180° view, zero blind spots for driveways and gardens.
+
+**Best Image Quality & Build:** [Hikvision DS-2CD2143G2 PoE Camera](https://www.amazon.co.uk/s?k=Hikvision+DS-2CD2143G2&tag=filce-21) — Commercial-grade optics and durability.
+
+**Best Budget / WiFi Option:** [TP-Link Tapo C320WS](https://www.amazon.co.uk/s?k=TP-Link+Tapo+C320WS&tag=filce-21) — Affordable WiFi with local storage, ONVIF compatible, no subscription.
+
+*All links are Amazon UK affiliate links (filce-21). Prices and availability fluctuate — check current deals. All recommended options are subscription-free.*
+
+---
+
 *All prices are approximate UK Amazon prices at time of writing. Affiliate links used — they help keep this site running at no extra cost to you.*

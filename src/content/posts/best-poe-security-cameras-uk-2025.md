@@ -193,6 +193,18 @@ Most PoE cameras are rated to -10°C or lower (check the spec sheet for each mod
 
 All of these integrate well with Home Assistant via RTSP or ONVIF — no cloud subscription, no ongoing costs beyond the hardware.
 
+## The Bottom Line
+
+A solid PoE camera setup in the UK starts from **£150–400** for 2–4 cameras + switch/NVR. One-time cost, local recording, full Home Assistant integration, no subscriptions.
+
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+- [Reolink 6MP Fisheye PoE Camera (best for whole-room / pets)](https://www.amazon.co.uk/Reolink-Security-Detection-Installation-FE-P-W/dp/B0CF1CCVH5?tag=filce-21)
+- [Reolink RLC-810A 4K PoE Camera (best all-rounder)](https://www.amazon.co.uk/Reolink-Detection-Weatherproof-Recording-RLC-810A-Bullet-Poe-Ip-Camera-Fixed-Lens/dp/B08F7C37NZ?tag=filce-21)
+- [Hikvision DS-2CD2143G2-I 4MP PoE Dome (best build quality)](https://www.amazon.co.uk/DS-2CD2143G2-I-DarkFighter-Detection-Waterproof-Compatible/dp/B09MY7TY8B?tag=filce-21)
+- [Reolink 8CH PoE NVR (related gear for recording)](https://www.amazon.co.uk/Reolink-Channel-Security-Recorder-RLN8-410/dp/B07DHBYRCH?tag=filce-21)
+
+The fastest path: Pick 2–4 cameras from the guide above → add a Reolink NVR or PoE switch → integrate with Home Assistant/Frigate.
+
 ## Related Reviews
 
 - 🏠 [Best Smart Home Devices UK 2026 — Complete Guide](/posts/best-smart-home-devices-uk-2026/)

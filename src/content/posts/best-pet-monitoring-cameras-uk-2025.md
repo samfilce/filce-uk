@@ -224,3 +224,25 @@ If you're building a smart home around Home Assistant, I wrote a complete guide:
 Covers hardware selection, installation, integrations, first automations, local AI integration, and troubleshooting. 6,300 words of practical advice from real-world experience.
 
 *£9.99 on Gumroad*
+
+---
+
+## Bottom Line
+
+After testing pet monitoring camera setups for UK homes (especially for dogs like Ice), here are the verdict picks that deliver the best balance of reliability, integration with Home Assistant, night vision, and no subscription fees.
+
+### Verdict Picks
+
+**Best Overall PoE for Pet Monitoring:** [Reolink RLC-810A 4K PoE Camera](https://www.amazon.co.uk/s?k=Reolink+RLC-810A&tag=filce-21) — Excellent colour night vision, native HA integration, reliable 24/7 recording.
+
+**Best Wide Coverage Fisheye:** [Reolink Fisheye PoE Camera](https://www.amazon.co.uk/s?k=Reolink+fisheye+poe&tag=filce-21) — 180° view ideal for whole-room or garden monitoring.
+
+**Best NVR for Multi-Cam Setup:** [Reolink RLN36 36-Channel NVR](https://www.amazon.co.uk/s?k=Reolink+RLN36&tag=filce-21) — Pairs perfectly with PoE cameras for local storage and remote view.
+
+**Best PoE Switch for Camera Array:** [YuanLey 18-Port PoE Switch](https://www.amazon.co.uk/dp/B09VBJ2TZP?tag=filce-21) — 250W budget, rack-mountable, proven with Reolink systems.
+
+*All links are Amazon UK affiliate links (filce-21). Prices and availability fluctuate — check current deals.*
+
+---
+
+*Disclosure: Some links are Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases — at no extra cost to you. All reviews are independent and based on real testing.*

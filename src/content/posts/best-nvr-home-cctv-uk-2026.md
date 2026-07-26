@@ -252,6 +252,13 @@ For most UK homes, the **Reolink RLN16-410** is the best all-round NVR: 16 chann
 
 Whatever you pick, pair it with [quality PoE cameras](/posts/best-poe-security-cameras-uk-2025/) and a [capable PoE switch](/posts/best-poe-switches-uk-2026/) — the NVR is only as good as the system around it.
 
----
+### Verdict Picks (Amazon UK, filce-21 affiliates)
 
-*All Amazon links use the filce-21 affiliate tag. Prices correct at time of writing; check Amazon for current pricing.*
+- [Reolink RLN36 36-Channel NVR (best overall future-proof recorder)](https://www.amazon.co.uk/dp/B0CW19WQVK?tag=filce-21)
+- [Reolink RLN16-410 16-Channel NVR with built-in PoE](https://www.amazon.co.uk/s?k=Reolink+RLN16-410&tag=filce-21)
+- [Hikvision DS-7608NI-I2 8-Channel NVR (premium recording gear)](https://www.amazon.co.uk/s?k=Hikvision+DS-7608NI-I2&tag=filce-21)
+- [Yuanley 18-Port PoE Switch (essential for RLN36 setups)](https://www.amazon.co.uk/s?k=Yuanley+18+port+PoE+switch&tag=filce-21)
+
+Add compatible cameras and switch for a complete local CCTV system.
+
+*Prices correct at time of writing and subject to change. Affiliate links (filce-21) used — these don't affect our recommendations.*

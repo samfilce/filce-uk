@@ -187,6 +187,12 @@ For domestic use pointing at your own property: no. If cameras capture public sp
 
 A complete home CCTV system in the UK costs **£300–900** depending on how many cameras you need. That's a one-time cost with no subscriptions, no cloud dependency, and recordings that stay on your hardware.
 
+### Verdict Picks (Amazon UK, filce-21 affiliates)
+- [Reolink RLC-810A 4K PoE Camera (best overall)](https://www.amazon.co.uk/Reolink-Detection-Weatherproof-Recording-RLC-810A-Bullet-Poe-Ip-Camera-Fixed-Lens/dp/B08F7C37NZ?tag=filce-21)
+- [Reolink RLN36 36-Channel NVR](https://www.amazon.co.uk/Reolink-Surveillance-Recording-Integrated-RLN36/dp/B09YDCCMYD?tag=filce-21)
+- [Reolink 6MP Fisheye PoE Camera](https://www.amazon.co.uk/Reolink-Security-Detection-Installation-FE-P-W/dp/B0CF1CCVH5?tag=filce-21)
+- [Yuanley 18-Port PoE Switch (best value)](https://www.amazon.co.uk/YuanLey-18-Port-PoE-16-black/dp/B082KNLXVT?tag=filce-21)
+
 The fastest path to a reliable system:
 - **Reolink cameras** → **Reolink NVR** → **Yuanley or GigaPlus PoE switch**
 - Add Home Assistant integration when you're ready to automate
