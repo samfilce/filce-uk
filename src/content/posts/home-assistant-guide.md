@@ -60,4 +60,22 @@ Subscribe to the [RSS feed](/feed.xml) if you want to catch those.
 
 ---
 
+## Bottom Line
+
+After extensive testing and real-world use of Home Assistant in a UK home setup in 2026, here are the verdict picks that deliver the best balance of ease of use, reliability, value, and integration potential.
+
+### Verdict Picks
+
+**Best Starter Hardware:** [Home Assistant Green](https://www.amazon.co.uk/dp/B0D2R8JLN6?tag=filce-21) — Official plug-and-play box, perfect for beginners, runs HA out of the box.
+
+**Best Value Mini PC:** [Beelink EQ12 Mini PC](https://www.amazon.co.uk/s?k=Beelink+EQ12&tag=filce-21) — Compact, powerful enough for multiple services alongside HA, great price/performance.
+
+**Best Zigbee Coordinator:** [Sonoff Zigbee 3.0 USB Dongle Plus](https://www.amazon.co.uk/s?k=Sonoff+Zigbee+3.0+USB+Dongle&tag=filce-21) — Reliable, affordable way to add a large Zigbee mesh to your HA setup.
+
+**Best Smart Plug Starter:** [TP-Link Tapo P110 Mini Smart Plug](https://www.amazon.co.uk/s?k=TP-Link+Tapo+P110&tag=filce-21) — Energy monitoring, local control, excellent HA integration, no subscription.
+
+*All links are Amazon UK affiliate links (filce-21). Prices and availability fluctuate — check current deals. All recommended options integrate natively or via official integrations with Home Assistant.*
+
+---
+
 *Links marked ★ are Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases.*
