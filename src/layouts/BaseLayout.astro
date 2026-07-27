@@ -52,6 +52,48 @@ const breadcrumb = [
     <link rel="canonical" href={canonicalUrl.toString()} />
     <link rel="alternate" type="application/rss+xml" title="Filce.uk Feed" href="/feed.xml" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+    <script defer data-domain="filce.uk" src="https://plausible.io/js/script.js"></script>
+    <script>
+      (function() {
+        function collectProps(target) {
+          const props = {};
+          for (const [key, value] of Object.entries(target.dataset)) {
+            if (!key.startsWith('plausibleProp') || value === undefined || value === '') continue;
+            const propName = key.slice('plausibleProp'.length);
+            const normalized = propName.charAt(0).toLowerCase() + propName.slice(1);
+            props[normalized] = value;
+          }
+          return props;
+        }
+
+        function trackClick(e) {
+          const target = e.target.closest && e.target.closest('[data-plausible-event], a[href*="gumroad.com"]');
+          if (!target) return;
+
+          let eventName = target.dataset.plausibleEvent;
+          let props = collectProps(target);
+
+          if (!eventName && target.matches('a[href*="gumroad.com"]')) {
+            const url = new URL(target.href, window.location.origin);
+            let product = 'unknown';
+            const match = url.pathname.match(/\/l\/([^/?#]+)/);
+            if (match) product = match[1];
+            eventName = 'gumroad_cta_click';
+            props = { ...props, product };
+          }
+
+          if (!eventName) return;
+
+          if (window.plausible) {
+            window.plausible(eventName, { props });
+          } else {
+            console.log('[Plausible] would track', eventName, props);
+          }
+        }
+
+        document.addEventListener('click', trackClick, true);
+      })();
+    </script>
     <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumb })} />
   </head>
   <body>

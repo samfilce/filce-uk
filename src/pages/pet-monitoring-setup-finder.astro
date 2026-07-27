@@ -1,0 +1,432 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Home Assistant Pet Monitoring Setup Finder UK 2026"
+  description="Pick the right Home Assistant pet monitoring setup in 60 seconds. Route visitors to the full guide, camera review, and supporting pet-monitoring resources."
+  canonicalPath="/pet-monitoring-setup-finder/"
+>
+  <section class="finder-hero">
+    <div class="container finder-grid">
+      <div class="hero-copy card">
+        <p class="eyebrow">Revenue tool · pet monitoring</p>
+        <h1>Pick the right Home Assistant pet setup in 60 seconds.</h1>
+        <p class="subtitle">
+          This page turns pet-monitoring traffic into the right offer: the full Home Assistant guide, the pet-monitoring article cluster, and the camera review that best matches the visitor's use case.
+          It filters by room size, privacy needs, and budget so visitors stop bouncing and start buying.
+        </p>
+        <div class="metrics">
+          <div class="metric"><strong>Lead qualification</strong><span>Sorts readers into guide-only, camera-first, or full setup paths.</span></div>
+          <div class="metric"><strong>Conversion routing</strong><span>Pushes the highest-fit Gumroad CTA before they leave.</span></div>
+          <div class="metric"><strong>Affiliate assist</strong><span>Surfaces the camera review and buying guide for extra clicks.</span></div>
+        </div>
+      </div>
+
+      <div class="panel card">
+        <h2>Setup finder</h2>
+        <p>Choose the visitor's situation. The recommendation updates instantly.</p>
+
+        <div class="field">
+          <label for="use-case">What are they monitoring?</label>
+          <select id="use-case">
+            <option value="single-room">One room / one main space</option>
+            <option value="hallway">Hallway / stairs / entryway</option>
+            <option value="whole-home">Whole room coverage or open-plan space</option>
+            <option value="multiple">Multiple rooms or long-term setup</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Privacy preference</label>
+          <div class="segmented" role="group" aria-label="Privacy preference">
+            <button type="button" data-privacy="cloud" aria-pressed="true">Cloud is fine</button>
+            <button type="button" data-privacy="local" aria-pressed="false">Prefer local-only</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="budget">Budget ceiling</label>
+          <input id="budget" type="range" min="50" max="400" step="10" value="150" />
+          <div class="range-row"><span>£50</span><span id="budget-label">£150</span><span>£400+</span></div>
+        </div>
+
+        <div class="results" id="results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container grid-2">
+    <article class="card content">
+      <h3>What this page sells</h3>
+      <ul class="list">
+        <li>The full Home Assistant guide for people starting from zero.</li>
+        <li>The pet-monitoring article cluster for readers who need more context.</li>
+        <li>The camera review for readers ready to choose hardware now.</li>
+      </ul>
+      <div class="pill-row">
+        <span class="pill">Home Assistant</span>
+        <span class="pill">Pet monitoring</span>
+        <span class="pill">Reolink cameras</span>
+        <span class="pill">AI alerts</span>
+        <span class="pill">PoE reliability</span>
+      </div>
+    </article>
+
+    <article class="card content">
+      <h3>Why it works</h3>
+      <p>
+        Visitors who want "just a camera" often need guidance, not another generic sales page. This tool identifies intent, then sends them to the page most likely to close the sale: the guide for beginners, the review for hardware buyers, or the monitoring post for people still comparing options.
+      </p>
+      <p class="small">
+        Primary CTA: <a id="primary-link-inline" href="https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="inline-callout" data-plausible-prop-route="guide" target="_blank" rel="noopener sponsored">Build Your Own AI Home Assistant</a>
+      </p>
+    </article>
+  </section>
+
+  <section class="container support card">
+    <h3>Supporting links</h3>
+    <div class="cta-row">
+      <a class="cta primary" href="https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-route="guide" target="_blank" rel="noopener sponsored">Buy the Home Assistant guide</a>
+      <a class="cta secondary" href="/posts/home-assistant-pet-monitoring/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="article">Read the pet-monitoring article</a>
+      <a class="cta secondary" href="/posts/best-pet-monitoring-cameras-uk-2025/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="comparison">Compare cameras first</a>
+      <a class="cta secondary" href="/posts/reolink-fisheye-camera-review/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="review">See the Reolink review</a>
+    </div>
+    <p class="footer-note">
+      Revenue mechanism: convert research traffic into a higher-fit purchase path, then continue earning from affiliate clicks when visitors need hardware before the guide.
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  const state = {
+    privacy: 'cloud',
+    useCase: 'single-room',
+    budget: 150,
+  };
+
+  const budgetInput = document.getElementById('budget');
+  const budgetLabel = document.getElementById('budget-label');
+  const useCase = document.getElementById('use-case');
+  const results = document.getElementById('results');
+  const privacyButtons = Array.from(document.querySelectorAll('[data-privacy]'));
+  const guideUrl = 'https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide';
+  const articleUrl = '/posts/home-assistant-pet-monitoring/';
+  const cameraUrl = '/posts/reolink-fisheye-camera-review/';
+  const comparisonUrl = '/posts/best-pet-monitoring-cameras-uk-2025/';
+
+  function formatBudget(value) {
+    return `£${Number(value).toLocaleString('en-GB')}`;
+  }
+
+  function calcRecommendation() {
+    const b = state.budget;
+    const local = state.privacy === 'local';
+    const multiple = state.useCase === 'multiple';
+    const wholeHome = state.useCase === 'whole-home';
+    const hallway = state.useCase === 'hallway';
+
+    let title = 'Best fit: Home Assistant guide first';
+    let blurb = 'Start with the guide, then add one reliable camera and simple automations. This is the safest route for visitors who are still learning the ecosystem.';
+    let primary = guideUrl;
+    let secondary = articleUrl;
+    let bullets = [
+      'Open the guide first so they do not waste money on the wrong hardware.',
+      'Use the pet-monitoring article as social proof and setup context.',
+      'Keep the next step cheap until they know whether they need PoE, AI, or multiple cameras.'
+    ];
+    let primaryRoute = 'guide';
+    let secondaryRoute = 'article';
+
+    if (local || wholeHome || multiple || b >= 250) {
+      title = 'Best fit: full guide + Reolink fisheye camera';
+      blurb = 'This visitor cares about reliability, room coverage, or local-first monitoring. Push the guide plus the camera review so they can choose the right hardware with confidence.';
+      primary = cameraUrl;
+      primaryRoute = 'camera-review';
+      secondary = guideUrl;
+      secondaryRoute = 'guide';
+      bullets = [
+        'Lead with the camera review because hardware is the likely blocker.',
+        'Add the guide as the paid upsell for the automation layer.',
+        'This path monetizes both the article click and the product sale.'
+      ];
+    } else if (hallway || b >= 120) {
+      title = 'Best fit: pet-monitoring article + guide';
+      blurb = 'They probably want a reliable setup without overbuying. The article builds trust, then the guide closes the sale once they see the full system.';
+      primary = guideUrl;
+      primaryRoute = 'guide';
+      secondary = comparisonUrl;
+      secondaryRoute = 'comparison';
+      bullets = [
+        'Send them to the article cluster first to answer common questions.',
+        'Use the guide CTA as the clear next step.',
+        'Keep the camera review visible for anyone ready to buy hardware.'
+      ];
+    }
+
+    results.innerHTML = `
+      <div class="result-kicker">Recommended conversion path</div>
+      <div class="result-title">${title}</div>
+      <div class="result-text">${blurb}</div>
+      <div class="cta-row">
+        <a class="cta primary" href="${primary}" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="result-primary" data-plausible-prop-route="${primaryRoute}" target="_blank" rel="noopener sponsored">Open primary CTA</a>
+        <a class="cta secondary" href="${secondary}" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="result-supporting" data-plausible-prop-route="${secondaryRoute}">Open supporting content</a>
+      </div>
+      <ul class="list">
+        ${bullets.map((item) => `<li>${item}</li>`).join('')}
+      </ul>
+      <p class="small" style="margin-top:14px;">
+        Budget: ${formatBudget(b)} · Privacy: ${state.privacy === 'local' ? 'local-only' : 'cloud okay'} · Use case: ${state.useCase.replace('-', ' ')}
+      </p>
+    `;
+
+    const inline = document.getElementById('primary-link-inline');
+    if (inline) {
+      inline.href = primary;
+      inline.dataset.plausiblePropRoute = primaryRoute;
+    }
+  }
+
+  budgetInput.addEventListener('input', () => {
+    state.budget = Number(budgetInput.value);
+    budgetLabel.textContent = formatBudget(state.budget);
+    calcRecommendation();
+  });
+
+  useCase.addEventListener('change', () => {
+    state.useCase = useCase.value;
+    calcRecommendation();
+  });
+
+  privacyButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.privacy = btn.dataset.privacy;
+      privacyButtons.forEach((other) => other.setAttribute('aria-pressed', String(other === btn)));
+      calcRecommendation();
+    });
+  });
+
+  budgetLabel.textContent = formatBudget(state.budget);
+  calcRecommendation();
+</script>
+
+<style>
+  .finder-hero {
+    padding: 2.5rem 0 1rem;
+    background: radial-gradient(circle at top, rgba(26, 107, 60, 0.08), transparent 30%);
+  }
+
+  .finder-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 1.1rem;
+    box-shadow: 0 12px 32px rgba(22, 32, 42, 0.08);
+  }
+
+  .hero-copy {
+    padding: 2rem;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b3c;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+    max-width: 11ch;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: #5f6c7b;
+    font-size: 1.05rem;
+    max-width: 62ch;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .metric {
+    background: #f0f4f8;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0.85rem;
+    padding: 0.9rem;
+  }
+
+  .metric strong { display: block; font-size: 1rem; margin-bottom: 0.2rem; }
+  .metric span { color: #5f6c7b; font-size: 0.92rem; }
+
+  .panel {
+    padding: 1.4rem;
+  }
+
+  .panel h2,
+  .content h3,
+  .support h3 {
+    margin: 0 0 0.6rem;
+  }
+
+  .panel p,
+  .content p,
+  .support p {
+    margin-top: 0;
+    color: #5f6c7b;
+  }
+
+  .field { margin: 1rem 0; }
+  label { display: block; font-weight: 700; margin-bottom: 0.45rem; }
+
+  select,
+  input[type='range'] {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0.75rem;
+    padding: 0.8rem 0.9rem;
+    font: inherit;
+    background: white;
+  }
+
+  .range-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: #5f6c7b;
+    font-size: 0.92rem;
+    margin-top: 0.4rem;
+  }
+
+  .segmented {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .segmented button {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: white;
+    border-radius: 0.75rem;
+    padding: 0.75rem 0.9rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .segmented button[aria-pressed='true'] {
+    border-color: #1a6b3c;
+    background: rgba(26, 107, 60, 0.09);
+    color: #0f4f2c;
+  }
+
+  .results {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(26, 107, 60, 0.08), rgba(26, 107, 60, 0.02));
+    border: 1px solid rgba(26, 107, 60, 0.15);
+    border-radius: 1rem;
+  }
+
+  .result-kicker {
+    color: #1a6b3c;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .result-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin: 0.45rem 0 0.6rem;
+  }
+
+  .result-text { color: #16202a; margin-bottom: 1rem; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid transparent;
+  }
+
+  .cta.primary { background: #1a6b3c; color: white; }
+  .cta.secondary { background: white; color: #16202a; border-color: rgba(0, 0, 0, 0.12); }
+
+  .list { margin: 0.75rem 0 0; padding-left: 1.1rem; }
+  .list li { margin: 0.45rem 0; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .content { padding: 1.5rem; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; }
+  .pill {
+    background: #f0f4f8;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+  }
+
+  .support { margin-top: 1rem; padding: 1.5rem; }
+  .footer-note { margin-top: 0.9rem; font-size: 0.92rem; }
+  .small { font-size: 0.92rem; }
+
+  @media (max-width: 920px) {
+    .finder-grid,
+    .grid-2,
+    .metrics,
+    .segmented {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Home Assistant Pet Monitoring Setup Finder',
+  description: 'Revenue-focused setup finder that routes pet-monitoring traffic to the right Home Assistant guide and camera resources.',
+  about: ['Home Assistant', 'pet monitoring', 'home automation'],
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'filce.uk',
+    url: 'https://filce.uk/'
+  },
+  primaryImageOfPage: 'https://filce.uk/images/ha-guide-cover.jpg',
+  potentialAction: {
+    '@type': 'ViewAction',
+    target: [
+      'https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide',
+      '/posts/home-assistant-pet-monitoring/',
+      '/posts/reolink-fisheye-camera-review/'
+    ]
+  }
+})} />
