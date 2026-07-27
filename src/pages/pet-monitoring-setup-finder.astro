@@ -79,7 +79,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Visitors who want "just a camera" often need guidance, not another generic sales page. This tool identifies intent, then sends them to the page most likely to close the sale: the guide for beginners, the review for hardware buyers, or the monitoring post for people still comparing options.
       </p>
       <p class="small">
-        Primary CTA: <a id="primary-link-inline" href="https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="inline-callout" data-plausible-prop-route="guide" target="_blank" rel="noopener sponsored">Build Your Own AI Home Assistant</a>
+        Primary CTA: <a id="primary-link-inline" href="https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-track-event="pet_monitoring_finder_primary_cta_click" data-track-surface="inline-callout" data-track-route="guide" target="_blank" rel="noopener sponsored">Build Your Own AI Home Assistant</a>
       </p>
     </article>
   </section>
@@ -87,14 +87,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="container support card">
     <h3>Supporting links</h3>
     <div class="cta-row">
-      <a class="cta primary" href="https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-route="guide" target="_blank" rel="noopener sponsored">Buy the Home Assistant guide</a>
-      <a class="cta secondary" href="/posts/home-assistant-pet-monitoring/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="article">Read the pet-monitoring article</a>
-      <a class="cta secondary" href="/posts/best-pet-monitoring-cameras-uk-2025/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="comparison">Compare cameras first</a>
-      <a class="cta secondary" href="/posts/reolink-fisheye-camera-review/" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="supporting-links" data-plausible-prop-destination="review">See the Reolink review</a>
+      <a class="cta primary" href="https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide" data-track-event="pet_monitoring_finder_primary_cta_click" data-track-surface="supporting-links" data-track-route="guide" target="_blank" rel="noopener sponsored">Buy the Home Assistant guide</a>
+      <a class="cta secondary" href="https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_pack" data-track-event="pet_monitoring_finder_secondary_cta_click" data-track-surface="supporting-links" data-track-route="pack" target="_blank" rel="noopener sponsored">Get the YAML automation pack</a>
+      <a class="cta secondary" href="/posts/home-assistant-pet-monitoring/" data-track-event="pet_monitoring_finder_supporting_link_click" data-track-surface="supporting-links" data-track-destination="article">Read the pet-monitoring article</a>
+      <a class="cta secondary" href="/posts/best-pet-monitoring-cameras-uk-2025/" data-track-event="pet_monitoring_finder_supporting_link_click" data-track-surface="supporting-links" data-track-destination="comparison">Compare cameras first</a>
+      <a class="cta secondary" href="/posts/reolink-fisheye-camera-review/" data-track-event="pet_monitoring_finder_supporting_link_click" data-track-surface="supporting-links" data-track-destination="review">See the Reolink review</a>
     </div>
     <p class="footer-note">
       Revenue mechanism: convert research traffic into a higher-fit purchase path, then continue earning from affiliate clicks when visitors need hardware before the guide.
     </p>
+  </section>
+
+  <section class="container copy card">
+    <div class="copy-grid">
+      <div>
+        <h3>Copyable recommendation brief</h3>
+        <p>Use this when a visitor wants a quick handoff for email, DMs, or checkout support.</p>
+        <textarea id="brief-output" readonly></textarea>
+      </div>
+      <div class="copy-actions">
+        <button type="button" class="cta primary" id="copy-brief" data-track-event="pet_monitoring_finder_copy_brief_click" data-track-surface="copy-panel">Copy recommendation brief</button>
+        <button type="button" class="cta secondary" id="copy-primary-url" data-track-event="pet_monitoring_finder_copy_primary_link_click" data-track-surface="copy-panel">Copy primary CTA link</button>
+        <p class="small copy-status" id="copy-status" aria-live="polite"></p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
@@ -110,13 +126,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   const useCase = document.getElementById('use-case');
   const results = document.getElementById('results');
   const privacyButtons = Array.from(document.querySelectorAll('[data-privacy]'));
-  const guideUrl = 'https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide';
+  const briefOutput = document.getElementById('brief-output');
+  const copyStatus = document.getElementById('copy-status');
+  const copyBriefButton = document.getElementById('copy-brief');
+  const copyPrimaryUrlButton = document.getElementById('copy-primary-url');
+  const guideUrl = 'https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide';
+  const packUrl = 'https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_pack';
   const articleUrl = '/posts/home-assistant-pet-monitoring/';
   const cameraUrl = '/posts/reolink-fisheye-camera-review/';
   const comparisonUrl = '/posts/best-pet-monitoring-cameras-uk-2025/';
 
   function formatBudget(value) {
     return `£${Number(value).toLocaleString('en-GB')}`;
+  }
+
+  function track(eventName, props = {}) {
+    const payload = { event: eventName, ...props };
+    console.info('[pet-monitoring-finder]', eventName, props);
+    window.dataLayer?.push?.(payload);
+    window.plausible?.(eventName, { props });
+    window.gtag?.('event', eventName, { ...props, transport_type: 'beacon' });
+  }
+
+  function makeBrief({ title, blurb, primary, secondary, primaryRoute, secondaryRoute, bullets }) {
+    return [
+      `Recommended path: ${title}`,
+      '',
+      blurb,
+      '',
+      `Primary CTA: ${primary}`,
+      `Supporting CTA: ${secondary}`,
+      `Primary route: ${primaryRoute}`,
+      `Supporting route: ${secondaryRoute}`,
+      '',
+      'Why this is the best fit:',
+      ...bullets.map((item) => `- ${item}`),
+    ].join('\n');
+  }
+
+  function setBriefText(text) {
+    if (briefOutput) briefOutput.value = text;
+  }
+
+  async function copyText(text, statusMessage) {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', 'true');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      if (copyStatus) copyStatus.textContent = statusMessage;
+    } catch (err) {
+      console.error(err);
+      if (copyStatus) copyStatus.textContent = 'Clipboard blocked; the text is still visible below.';
+    }
+  }
+
+  function updateLinkTracking(primary, primaryRoute) {
+    const inline = document.getElementById('primary-link-inline');
+    if (inline) {
+      inline.href = primary;
+      inline.dataset.trackRoute = primaryRoute;
+    }
+    if (copyPrimaryUrlButton) {
+      copyPrimaryUrlButton.dataset.copyUrl = primary;
+    }
   }
 
   function calcRecommendation() {
@@ -139,16 +221,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     let secondaryRoute = 'article';
 
     if (local || wholeHome || multiple || b >= 250) {
-      title = 'Best fit: full guide + Reolink fisheye camera';
-      blurb = 'This visitor cares about reliability, room coverage, or local-first monitoring. Push the guide plus the camera review so they can choose the right hardware with confidence.';
-      primary = cameraUrl;
-      primaryRoute = 'camera-review';
-      secondary = guideUrl;
-      secondaryRoute = 'guide';
+      title = 'Best fit: YAML pack + Reolink fisheye camera';
+      blurb = 'This visitor cares about reliability, room coverage, or local-first monitoring. Push the automation pack and the camera review so they can choose the right hardware and setup with confidence.';
+      primary = packUrl;
+      primaryRoute = 'pack';
+      secondary = cameraUrl;
+      secondaryRoute = 'camera-review';
       bullets = [
-        'Lead with the camera review because hardware is the likely blocker.',
-        'Add the guide as the paid upsell for the automation layer.',
-        'This path monetizes both the article click and the product sale.'
+        'Lead with the automation pack because setup complexity is the main blocker.',
+        'Use the camera review as the hardware proof point for the final purchase.',
+        'This path monetizes both the product sale and the supporting content click.'
       ];
     } else if (hallway || b >= 120) {
       title = 'Best fit: pet-monitoring article + guide';
@@ -164,13 +246,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       ];
     }
 
+    const brief = makeBrief({ title, blurb, primary, secondary, primaryRoute, secondaryRoute, bullets });
+    setBriefText(brief);
+    updateLinkTracking(primary, primaryRoute);
+
     results.innerHTML = `
       <div class="result-kicker">Recommended conversion path</div>
       <div class="result-title">${title}</div>
       <div class="result-text">${blurb}</div>
       <div class="cta-row">
-        <a class="cta primary" href="${primary}" data-plausible-event="pet_monitoring_finder_primary_cta_click" data-plausible-prop-surface="result-primary" data-plausible-prop-route="${primaryRoute}" target="_blank" rel="noopener sponsored">Open primary CTA</a>
-        <a class="cta secondary" href="${secondary}" data-plausible-event="pet_monitoring_finder_supporting_link_click" data-plausible-prop-surface="result-supporting" data-plausible-prop-route="${secondaryRoute}">Open supporting content</a>
+        <a class="cta primary" href="${primary}" data-track-event="pet_monitoring_finder_primary_cta_click" data-track-surface="result-primary" data-track-route="${primaryRoute}" target="_blank" rel="noopener sponsored">Open primary CTA</a>
+        <a class="cta secondary" href="${secondary}" data-track-event="pet_monitoring_finder_supporting_link_click" data-track-surface="result-supporting" data-track-route="${secondaryRoute}">Open supporting content</a>
       </div>
       <ul class="list">
         ${bullets.map((item) => `<li>${item}</li>`).join('')}
@@ -179,12 +265,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Budget: ${formatBudget(b)} · Privacy: ${state.privacy === 'local' ? 'local-only' : 'cloud okay'} · Use case: ${state.useCase.replace('-', ' ')}
       </p>
     `;
-
-    const inline = document.getElementById('primary-link-inline');
-    if (inline) {
-      inline.href = primary;
-      inline.dataset.plausiblePropRoute = primaryRoute;
-    }
   }
 
   budgetInput.addEventListener('input', () => {
@@ -204,6 +284,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       privacyButtons.forEach((other) => other.setAttribute('aria-pressed', String(other === btn)));
       calcRecommendation();
     });
+  });
+
+  copyBriefButton?.addEventListener('click', () => {
+    copyText(briefOutput?.value ?? '', 'Copied recommendation brief to clipboard.');
+  });
+
+  copyPrimaryUrlButton?.addEventListener('click', () => {
+    copyText(copyPrimaryUrlButton.dataset.copyUrl ?? guideUrl, 'Copied the primary CTA link to clipboard.');
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest?.('[data-track-event]');
+    if (!target) return;
+
+    const eventName = target.dataset.trackEvent;
+    if (!eventName) return;
+
+    const props = Object.fromEntries(
+      Object.entries({
+        surface: target.dataset.trackSurface,
+        route: target.dataset.trackRoute,
+        destination: target.dataset.trackDestination,
+      }).filter(([, value]) => value)
+    );
+
+    track(eventName, props);
   });
 
   budgetLabel.textContent = formatBudget(state.budget);
@@ -281,13 +387,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .panel h2,
   .content h3,
-  .support h3 {
+  .support h3,
+  .copy h3 {
     margin: 0 0 0.6rem;
   }
 
   .panel p,
   .content p,
-  .support p {
+  .support p,
+  .copy p {
     margin-top: 0;
     color: #5f6c7b;
   }
@@ -399,11 +507,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .footer-note { margin-top: 0.9rem; font-size: 0.92rem; }
   .small { font-size: 0.92rem; }
 
+  .copy {
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .copy-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .copy textarea {
+    width: 100%;
+    min-height: 220px;
+    margin-top: 0.75rem;
+    padding: 0.95rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #f8fafc;
+    color: #16202a;
+    font: inherit;
+    resize: vertical;
+  }
+
+  .copy-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .copy-status {
+    min-height: 1.25rem;
+    margin: 0;
+  }
+
   @media (max-width: 920px) {
     .finder-grid,
     .grid-2,
     .metrics,
-    .segmented {
+    .segmented,
+    .copy-grid {
       grid-template-columns: 1fr;
     }
   }
@@ -424,7 +570,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   potentialAction: {
     '@type': 'ViewAction',
     target: [
-      'https://gumroad.com/l/ai-home-assistant-guide?utm_source=filce_uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide',
+      'https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_guide',
+      'https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=quiz&utm_campaign=pet_monitoring_pack',
       '/posts/home-assistant-pet-monitoring/',
       '/posts/reolink-fisheye-camera-review/'
     ]

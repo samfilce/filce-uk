@@ -11,10 +11,10 @@ const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => pos
   <section class="hero">
     <div class="container">
       <div class="hero-inner">
-        <p class="hero-eyebrow">Personal reviews from a UK tinkerer</p>
-        <h1 class="hero-title">Gear I've actually bought.<br />Takes I actually have.</h1>
-        <p class="hero-desc">No press samples, no sponsored posts - just honest thoughts on the tech and tools that make their way into my home.</p>
-        <a href="/about/" class="btn btn-primary">About me</a>
+        <p class="hero-eyebrow">Home Assistant guides from a UK tinkerer</p>
+        <h1 class="hero-title">Home Assistant ideas.<br />From setups I actually use.</h1>
+        <p class="hero-desc">Practical UK-focused reviews and guides for people who want automations that save time - not just smart-home gadgets that look good on paper.</p>
+        <a href="#digital-products-heading" class="btn btn-primary">Explore the guide</a>
       </div>
     </div>
   </section>
@@ -22,24 +22,17 @@ const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => pos
   <section class="posts-section" aria-labelledby="digital-products-heading">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title" id="digital-products-heading">Home Assistant guides &amp; automations</h2>
-        <p class="section-sub">Practical, UK-focused resources built from the systems I run at home.</p>
+        <h2 class="section-title" id="digital-products-heading">Home Assistant that actually saves you time</h2>
+        <p class="section-sub">One practical guide for a smoother setup, faster automations, and fewer dead ends.</p>
       </div>
       <div class="post-grid">
         <article class="post-card">
           <div class="post-card-placeholder" aria-hidden="true"><span>Guide</span></div>
           <div class="post-card-body">
-            <h3 class="post-card-title">Build Your Own AI Home Assistant</h3>
-            <p class="post-card-excerpt">A practical PDF + EPUB guide to installation, integrations, automations and private local AI.</p>
-            <a href="https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ai-ha-guide" class="btn btn-primary">Get the guide — £9.99</a>
-          </div>
-        </article>
-        <article class="post-card">
-          <div class="post-card-placeholder" aria-hidden="true"><span>YAML Pack</span></div>
-          <div class="post-card-body">
-            <h3 class="post-card-title">Home Assistant YAML Automation Pack</h3>
-            <p class="post-card-excerpt">50 ready-to-use automations for lighting, security, energy, comfort and everyday routines.</p>
-            <a href="https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ha-yaml-pack" class="btn btn-primary">Get the pack — £12</a>
+            <h3 class="post-card-title">Build a Home Assistant setup that feels instant, not fiddly</h3>
+            <p class="post-card-excerpt">A PDF + EPUB guide to installation, integrations, automations and private local AI - written from the systems I run at home.</p>
+            <a href="https://samfilce.gumroad.com/l/ai-home-assistant-guide?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ai-ha-guide" class="btn btn-primary" data-cta-track="ha-guide">Get the guide — £9.99</a>
+            <p class="post-card-excerpt">Prefer ready-made automations? <a href="https://samfilce.gumroad.com/l/xurkli?utm_source=filce.uk&utm_medium=homepage&utm_campaign=ha-yaml-pack" data-cta-track="ha-yaml-pack">See the YAML pack</a>.</p>
           </div>
         </article>
       </div>
@@ -94,7 +87,7 @@ const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => pos
           </div>
           <div class="post-card-body">
             <a href="/categories/home-automation/" class="post-category-tag">Home Automation</a>
-            <h3 class="post-card-title"><a href="/pet-monitoring-setup-finder/" data-plausible-event="pet_monitoring_finder_homepage_card_click" data-plausible-prop-source="homepage-card" data-plausible-prop-destination="finder">Pet monitoring setup finder</a></h3>
+            <h3 class="post-card-title"><a href="/pet-monitoring-setup-finder/" data-cta-track="pet-monitoring-finder-homepage-card">Pet monitoring setup finder</a></h3>
             <p class="post-card-excerpt">Route readers to the right Home Assistant pet monitoring path, then push them to the highest-fit Gumroad or camera CTA.</p>
             <div class="post-card-meta">
               <span>Interactive tool</span>
@@ -190,4 +183,22 @@ const featuredGuides = featuredGuideSlugs.map((slug) => posts.find((post) => pos
       </div>
     </div>
   </section>
+  <script>
+    const ctaLinks = document.querySelectorAll('[data-cta-track]');
+    const trackHomeAssistantCta = (ctaName) => {
+      const eventName = 'home_assistant_cta_click';
+      const payload = { event: eventName, cta: ctaName };
+      console.info(`[homepage] ${eventName}`, ctaName);
+      window.dataLayer?.push?.(payload);
+      window.plausible?.(eventName, { props: { cta: ctaName } });
+      window.gtag?.('event', eventName, { cta_name: ctaName, transport_type: 'beacon' });
+    };
+
+    ctaLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        const ctaName = link.dataset.ctaTrack;
+        if (ctaName) trackHomeAssistantCta(ctaName);
+      });
+    });
+  </script>
 </BaseLayout>
