@@ -1,0 +1,810 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Caravan Awning Seasonal Checklist UK 2026 — Spring Prep, Pre-Trip & Storage';
+const description = 'A practical caravan awning seasonal maintenance checklist that turns inspection traffic into the right cleaner, reproofer, seam sealer, or rail-lube click.';
+const canonicalPath = '/caravan-awning-seasonal-checklist/';
+
+const posts = {
+  cleaner: '/posts/best-caravan-awning-cleaner-uk-2026/',
+  explainer: '/posts/awning-cleaner-vs-reproofer-vs-seam-sealer-uk-2026/',
+};
+
+const related = {
+  partsGuide: '/caravan-awning-parts-compatibility-guide/',
+  brandFitMatrix: '/caravan-awning-brand-fit-matrix/',
+  careFinder: '/caravan-awning-care-finder/',
+  repairEstimator: '/caravan-awning-repair-estimator/',
+};
+
+const amazon = {
+  cleaner: 'https://www.amazon.co.uk/s?k=caravan+awning+cleaner&tag=filce-21',
+  reproofer: 'https://www.amazon.co.uk/s?k=awning+reproofer&tag=filce-21',
+  seamSealer: 'https://www.amazon.co.uk/s?k=seam+sealer+awning&tag=filce-21',
+  zipLube: 'https://www.amazon.co.uk/s?k=awning+rail+zip+lubricant&tag=filce-21',
+  pvcCleaner: 'https://www.amazon.co.uk/s?k=PVC+awning+cleaner&tag=filce-21',
+};
+---
+
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} ogType="website" category="Tools">
+  <section class="hero-shell">
+    <div class="container hero-grid">
+      <div class="card hero-copy">
+        <p class="eyebrow">Lead magnet · caravan awnings</p>
+        <h1>Run the seasonal awning check before the next trip catches you out.</h1>
+        <p class="lede">
+          This page is built for owners who want a fast pre-trip or spring-prep checklist, not a product comparison. Pick the season, material, and main issue, then get a printable checklist plus the right next-step product path.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#builder" data-plausible-event="awning_checklist_jump_click" data-plausible-prop-surface="hero">Build my checklist</a>
+          <a class="btn secondary" href={posts.explainer} data-plausible-event="awning_checklist_explainer_click" data-plausible-prop-surface="hero">Read the explainer</a>
+          <a class="btn green" href={posts.cleaner} data-plausible-event="awning_checklist_cleaner_guide_click" data-plausible-prop-surface="hero">See the cleaner guide</a>
+        </div>
+        <p class="microcopy">Revenue mechanism: seasonal inspection traffic gets captured into a printable checklist, then routed to cleaner, reproofer, seam sealer, or rail-lube product pages based on the actual job.</p>
+        <p class="small help-link">Need help choosing between cleaner, reproofer, and seam sealer? <a href={posts.explainer} data-plausible-event="awning_checklist_help_link_click" data-plausible-prop-surface="hero-help">Read the awning chooser explainer</a>.</p>
+      </div>
+
+      <div class="card hero-panel" aria-label="Checklist summary">
+        <div class="metric">
+          <div class="label">Best for spring prep</div>
+          <div class="value">Clean → dry → inspect</div>
+          <div class="sub">a simple workflow that avoids sealing dirt into the fabric</div>
+        </div>
+        <div class="metric">
+          <div class="label">Best for pre-trip check</div>
+          <div class="value">Seams, rails, beading</div>
+          <div class="sub">catch the problems that cause the most campsite frustration</div>
+        </div>
+        <div class="metric">
+          <div class="label">Best for storage reset</div>
+          <div class="value">Dry, fold, and note repairs</div>
+          <div class="sub">leave the awning ready for the next season</div>
+        </div>
+        <div class="metric">
+          <div class="label">Best next buy</div>
+          <div class="value" id="hero-buy">Caravan awning cleaner</div>
+          <div class="sub" id="hero-sub">start with the product that fits the visible problem</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-reading-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Related reading</h2>
+        <p class="section-sub">If the caravan issue is really fit or hardware-related rather than seasonal care, use the compatibility guide or brand matrix to keep the cluster bidirectional.</p>
+      </div>
+      <div class="card">
+        <ul class="rules">
+          <li><a href="/posts/best-caravan-moisture-control-products-for-winter-storage-uk/" data-plausible-event="awning_checklist_moisture_control_click" data-plausible-prop-surface="related-reading">Compare the moisture control products</a></li>
+          <li><a href={posts.explainer} data-plausible-event="awning_checklist_explainer_related_click" data-plausible-prop-surface="related-reading">Read the awning chooser explainer</a></li>
+          <li><a href={related.careFinder} data-plausible-event="awning_checklist_care_related_click" data-plausible-prop-surface="related-reading">Open the care finder</a></li>
+          <li><a href={related.repairEstimator} data-plausible-event="awning_checklist_repair_related_click" data-plausible-prop-surface="related-reading">Open the repair estimator</a></li>
+          <li><a href={related.partsGuide} data-plausible-event="awning_checklist_parts_related_click" data-plausible-prop-surface="related-reading">Check the parts compatibility guide</a></li>
+          <li><a href={related.brandFitMatrix} data-plausible-event="awning_checklist_brand_matrix_related_click" data-plausible-prop-surface="related-reading">Open the brand fit matrix</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow-section">
+    <div class="container workflow-grid">
+      <article class="card builder" id="builder">
+        <h2 class="section-title">Seasonal checklist builder</h2>
+        <p class="section-subtitle">Set the season and the problem you can actually see. The checklist updates instantly, along with the best product route.</p>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Seasonal moment</span>
+            <select id="season">
+              <option value="spring">Spring prep / first outing</option>
+              <option value="pre-trip">Pre-trip inspection</option>
+              <option value="post-trip">After a wet or dirty trip</option>
+              <option value="storage">End-of-season storage reset</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Main problem</span>
+            <select id="problem">
+              <option value="dirty">Dirty fabric / road film / mildew spots</option>
+              <option value="waterproofing">Clean fabric that no longer beads water</option>
+              <option value="seams">Water through stitching or pinholes</option>
+              <option value="rails">Sticky rail, zip, or moving parts</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Awning material</span>
+            <select id="material">
+              <option value="fabric">Fabric awning</option>
+              <option value="pvc">PVC / vinyl awning</option>
+              <option value="unsure">I’m not certain</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Budget ceiling</span>
+            <input id="budget" type="range" min="5" max="60" step="1" value="18" />
+            <div class="range-row"><span>£5</span><span id="budget-label">£18</span><span>£60</span></div>
+          </label>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div class="result-card">
+            <div class="result-label">Printable checklist</div>
+            <textarea id="checklist-output" readonly></textarea>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-card">
+              <div class="result-label">Recommended first buy</div>
+              <div class="result-title" id="result-title">Dedicated caravan awning cleaner</div>
+              <div class="result-copy" id="result-copy">Use a cleaner first so you do not lock dirt into the fabric or waste waterproofing treatment on a dirty surface.</div>
+            </div>
+            <div class="result-card">
+              <div class="result-label">Best follow-up</div>
+              <div class="result-title" id="result-secondary">Reproofer after the wash</div>
+              <div class="result-copy" id="result-secondary-copy">If the awning is clean but still not beading water, move to a reproofer next.</div>
+            </div>
+          </div>
+
+          <div class="result-card callout">
+            <div class="result-label">Suggested next step</div>
+            <div class="result-copy" id="result-action">Build the checklist, print it if you need to, then use the product links below for the exact maintenance job.</div>
+          </div>
+
+          <div class="cta-row compact">
+            <a class="btn primary" id="primary-link" href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_primary_click" data-plausible-prop-surface="results">Check price</a>
+            <a class="btn secondary" id="secondary-link" href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_secondary_click" data-plausible-prop-surface="results">See backup option</a>
+            <button class="btn green" type="button" id="copy-checklist" data-plausible-event="awning_checklist_copy_click" data-plausible-prop-surface="results">Copy checklist</button>
+            <button class="btn secondary" type="button" id="print-checklist" data-plausible-event="awning_checklist_print_click" data-plausible-prop-surface="results">Print checklist</button>
+          </div>
+          <p class="small status" id="copy-status" aria-live="polite"></p>
+        </div>
+      </article>
+
+      <aside class="card sidebar">
+        <h2 class="section-title">Seasonal workflow that sells</h2>
+        <ul class="rules">
+          <li><strong>Spring prep:</strong> remove grime, check the fabric, then decide if waterproofing needs refreshing.</li>
+          <li><strong>Pre-trip:</strong> verify seams, rails, and zips before you leave home.</li>
+          <li><strong>Post-trip:</strong> dry the awning and spot any damage while it is still easy to fix.</li>
+          <li><strong>Storage reset:</strong> fold it dry, note repairs, and stop the next season starting from scratch.</li>
+        </ul>
+
+        <div class="cta-stack">
+          <a class="btn primary" href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_cleaner_amazon_click" data-plausible-prop-surface="sidebar">Shop cleaners</a>
+          <a class="btn secondary" href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_reproofer_amazon_click" data-plausible-prop-surface="sidebar">Shop reproofer</a>
+          <a class="btn secondary" href={amazon.seamSealer} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_seam_amazon_click" data-plausible-prop-surface="sidebar">Shop seam sealer</a>
+          <a class="btn secondary" href={amazon.zipLube} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_zip_amazon_click" data-plausible-prop-surface="sidebar">Shop rail / zip lube</a>
+        </div>
+
+        <div class="note-box">
+          <strong>Lead magnet angle</strong>
+          <p>The checklist gives the visitor a practical saveable asset, then uses the next-step recommendation to keep them inside the awning-care funnel instead of sending them back to generic search.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What to do at each stage</h2>
+        <p class="section-sub">The same page works as a spring checklist, a pre-trip reminder, or a storage reset guide.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <article class="stage-card">
+          <p class="stage-kicker">Spring prep</p>
+          <h3>Start with a clean surface</h3>
+          <p>Brush off loose debris, wash away winter grime, then inspect whether the fabric still beads water after it dries.</p>
+          <a href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_spring_cleaner_click" data-plausible-prop-surface="timeline">Open the cleaner search</a>
+        </article>
+        <article class="stage-card">
+          <p class="stage-kicker">Pre-trip inspection</p>
+          <h3>Check the bits that fail at the campsite</h3>
+          <p>Look at seams, zips, rail movement, and any folds that may have been creased or crushed in storage.</p>
+          <a href={posts.explainer} data-plausible-event="awning_checklist_pretrip_explainer_click" data-plausible-prop-surface="timeline">Read the explainer</a>
+        </article>
+        <article class="stage-card">
+          <p class="stage-kicker">After a wet trip</p>
+          <h3>Dry it before it gets forgotten</h3>
+          <p>Let the awning dry fully, then decide whether the next issue is simple grime, a lost water-beading layer, or an actual leak.</p>
+          <a href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_posttrip_reproofer_click" data-plausible-prop-surface="timeline">Open the reproofer search</a>
+        </article>
+        <article class="stage-card">
+          <p class="stage-kicker">Storage reset</p>
+          <h3>Leave a note for next season</h3>
+          <p>Record the repair, clean and dry everything, and keep a small kit ready so the same problem does not repeat next time.</p>
+          <a href={amazon.seamSealer} target="_blank" rel="noopener sponsored" data-plausible-event="awning_checklist_storage_seam_click" data-plausible-prop-surface="timeline">Open seam sealer search</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container faq-grid">
+      <article class="card faq-card">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Should I clean or reproof first?</summary>
+          <p>Clean first. Reproofing over dirt usually traps the contamination and gives a worse result.</p>
+        </details>
+        <details>
+          <summary>Does seam sealer replace reproofer?</summary>
+          <p>No. Seam sealer fixes stitching leaks. Reproofer restores water repellency across the fabric.</p>
+        </details>
+        <details>
+          <summary>What if the awning is PVC?</summary>
+          <p>Use a cleaner intended for PVC or vinyl where possible, then move to the relevant repair product if needed.</p>
+        </details>
+      </article>
+
+      <article class="card faq-card">
+        <h2>Affiliate disclosure</h2>
+        <p>Some links on this page are affiliate links. If someone buys through them, I may earn a commission at no extra cost to the buyer. That helps fund the site and keeps the buying guides free.</p>
+        <p class="small">For the full product-side guide, read <a href={posts.cleaner}>Best Caravan Awning Cleaner UK 2026</a> and the explainer above.</p>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    const state = {
+      season: 'spring',
+      problem: 'dirty',
+      material: 'fabric',
+      budget: 18,
+    };
+
+    const urls = {
+      cleaner: 'https://www.amazon.co.uk/s?k=caravan+awning+cleaner&tag=filce-21',
+      reproofer: 'https://www.amazon.co.uk/s?k=awning+reproofer&tag=filce-21',
+      seamSealer: 'https://www.amazon.co.uk/s?k=seam+sealer+awning&tag=filce-21',
+      zipLube: 'https://www.amazon.co.uk/s?k=awning+rail+zip+lubricant&tag=filce-21',
+      pvcCleaner: 'https://www.amazon.co.uk/s?k=PVC+awning+cleaner&tag=filce-21',
+    };
+
+    const els = {
+      season: document.getElementById('season'),
+      problem: document.getElementById('problem'),
+      material: document.getElementById('material'),
+      budget: document.getElementById('budget'),
+      budgetLabel: document.getElementById('budget-label'),
+      checklistOutput: document.getElementById('checklist-output'),
+      resultTitle: document.getElementById('result-title'),
+      resultCopy: document.getElementById('result-copy'),
+      resultSecondary: document.getElementById('result-secondary'),
+      resultSecondaryCopy: document.getElementById('result-secondary-copy'),
+      resultAction: document.getElementById('result-action'),
+      primaryLink: document.getElementById('primary-link'),
+      secondaryLink: document.getElementById('secondary-link'),
+      copyChecklist: document.getElementById('copy-checklist'),
+      printChecklist: document.getElementById('print-checklist'),
+      copyStatus: document.getElementById('copy-status'),
+      heroBuy: document.getElementById('hero-buy'),
+      heroSub: document.getElementById('hero-sub'),
+    };
+
+    const money = (value) => `£${Number(value).toFixed(0)}`;
+
+    function track(eventName, props = {}) {
+      const payload = { event: eventName, ...props };
+      console.info('[awning-seasonal-checklist]', eventName, props);
+      window.dataLayer?.push?.(payload);
+      window.plausible?.(eventName, { props });
+      window.gtag?.('event', eventName, { ...props, transport_type: 'beacon' });
+    }
+
+    function copyText(text, statusMessage) {
+      const finish = () => {
+        if (els.copyStatus) els.copyStatus.textContent = statusMessage;
+      };
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(finish).catch(() => {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', 'true');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+            finish();
+          });
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', 'true');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          finish();
+        }
+      } catch (err) {
+        console.error(err);
+        if (els.copyStatus) els.copyStatus.textContent = 'Clipboard blocked, but the checklist is still visible on screen.';
+      }
+    }
+
+    function buildChecklist() {
+      const season = state.season;
+      const problem = state.problem;
+      const material = state.material;
+      const budget = state.budget;
+
+      let title = 'Caravan awning cleaner';
+      let firstCopy = 'Use a cleaner first so you do not seal grime into the fabric or waste a waterproofing treatment on dirt.';
+      let second = 'Reproofer after the wash';
+      let secondCopy = 'If the awning is clean but no longer beads water, move to a reproofer next.';
+      let primaryUrl = urls.cleaner;
+      let secondaryUrl = urls.reproofer;
+      let nextStep = 'Start with the checklist, then use the product links below if the inspection shows a real maintenance job.';
+
+      const lines = [];
+
+      if (season === 'spring') {
+        lines.push('[ ] Remove loose debris and brush off leaves', '[ ] Wash the awning and let it dry fully', '[ ] Check whether water still beads on the surface', '[ ] Inspect seams and zips while everything is visible');
+      } else if (season === 'pre-trip') {
+        lines.push('[ ] Check seams for pinholes or worn stitching', '[ ] Test zips and rails for sticking or rough movement', '[ ] Confirm the awning is clean and dry before packing', '[ ] Note any repair item you need to buy before leaving');
+      } else if (season === 'post-trip') {
+        lines.push('[ ] Dry the awning completely before storage', '[ ] Remove mud, tree sap, or mildew spots', '[ ] Check if waterproofing has faded', '[ ] Mark any seam issues for the next maintenance window');
+      } else {
+        lines.push('[ ] Dry the awning before folding', '[ ] Store it loosely and cleanly', '[ ] Record leaks, seam wear, or sticky rails', '[ ] Order any repair item now rather than later');
+      }
+
+      if (problem === 'waterproofing') {
+        title = 'Awning reproofer';
+        firstCopy = 'The fabric is already clean, so restoring water repellency is the next useful purchase.';
+        primaryUrl = urls.reproofer;
+        if (budget >= 25) {
+          second = 'Cleaner for the prep step';
+          secondCopy = 'If you have not cleaned the awning yet, do that before applying waterproofing treatment.';
+          secondaryUrl = urls.cleaner;
+        }
+        lines.push('[ ] Confirm the fabric is clean before treating it', '[ ] Let it dry completely before using reproofer');
+      }
+
+      if (problem === 'seams') {
+        title = 'Awning seam sealer';
+        firstCopy = 'If water is getting through stitching or pinholes, seam sealer is the right fix.';
+        primaryUrl = urls.seamSealer;
+        second = 'Cleaner before repair';
+        secondCopy = 'A clean, dry surface gives repair products the best chance of sticking properly.';
+        secondaryUrl = urls.cleaner;
+        lines.push('[ ] Identify the exact seam or pinhole that leaks', '[ ] Clean and dry the repair area before sealing');
+      }
+
+      if (problem === 'rails') {
+        title = 'Rail / zip lubricant';
+        firstCopy = 'If the problem is sticky rails or zips, a lubricant solves the friction issue better than cleaner does.';
+        primaryUrl = urls.zipLube;
+        second = 'Cleaner for the fabric';
+        secondCopy = 'If the awning is also dirty, clean it first and then add the rail or zip care.';
+        secondaryUrl = urls.cleaner;
+        lines.push('[ ] Test the rail or zip movement before packing', '[ ] Add lubricant only to the moving part that is sticking');
+      }
+
+      if (problem === 'unsure') {
+        nextStep = 'Not sure yet? Use the explainer first, then choose the product that matches the visible issue.';
+        lines.push('[ ] Read the explainer if you cannot name the problem yet', '[ ] Do not buy waterproofing before cleaning the surface');
+      }
+
+      if (material === 'pvc' && (problem === 'dirty' || problem === 'waterproofing' || problem === 'unsure')) {
+        title = 'PVC-specific awning cleaner';
+        firstCopy = 'PVC or vinyl awnings usually do better with a cleaner intended for that material.';
+        primaryUrl = urls.pvcCleaner;
+        second = 'Reproofer or seam sealer if required';
+        secondCopy = 'Only move beyond cleaning once you know whether the problem is repellency or a leak.';
+        secondaryUrl = urls.reproofer;
+      }
+
+      if (material === 'unsure') {
+        nextStep = 'If you are not sure about the material, start with the explainer and buy the cleaner that matches the visible problem.';
+      }
+
+      if (budget < 12 && problem !== 'seams') {
+        second = 'Lower-cost cleaner search';
+        secondCopy = 'A smaller-budget search often still finds an acceptable cleaner without paying for the biggest bottle.';
+        secondaryUrl = urls.cleaner;
+      }
+
+      if (season === 'spring' || season === 'post-trip') {
+        lines.unshift('[ ] Clear out any leaves, dirt, or debris first');
+      }
+
+      const checklist = [
+        `Season: ${season}`,
+        `Problem: ${problem}`,
+        `Material: ${material}`,
+        `Budget ceiling: ${money(budget)}`,
+        '',
+        'Checklist:',
+        ...lines,
+        '',
+        `First buy: ${title}`,
+        `Follow-up: ${second}`,
+        `Next step: ${nextStep}`,
+      ].join('\n');
+
+      return { title, firstCopy, second, secondCopy, primaryUrl, secondaryUrl, nextStep, checklist };
+    }
+
+    function render() {
+      const rec = buildChecklist();
+      els.budgetLabel.textContent = money(state.budget);
+      els.resultTitle.textContent = rec.title;
+      els.resultCopy.textContent = rec.firstCopy;
+      els.resultSecondary.textContent = rec.second;
+      els.resultSecondaryCopy.textContent = rec.secondCopy;
+      els.resultAction.textContent = rec.nextStep;
+      els.checklistOutput.value = rec.checklist;
+      els.primaryLink.href = rec.primaryUrl;
+      els.secondaryLink.href = rec.secondaryUrl;
+      els.heroBuy.textContent = rec.title;
+      els.heroSub.textContent = rec.nextStep;
+      if (els.copyChecklist) {
+        els.copyChecklist.onclick = () => {
+          track('awning_checklist_copy_click', { season: state.season, problem: state.problem, material: state.material, budget: state.budget });
+          copyText(rec.checklist, 'Checklist copied — ready to paste into notes, email, or a phone reminder.');
+        };
+      }
+      if (els.printChecklist) {
+        els.printChecklist.onclick = () => {
+          track('awning_checklist_print_click', { season: state.season, problem: state.problem, material: state.material, budget: state.budget });
+          window.print();
+        };
+      }
+    }
+
+    els.season.addEventListener('change', (event) => {
+      state.season = event.target.value;
+      track('awning_checklist_season_change', { season: state.season });
+      render();
+    });
+
+    els.problem.addEventListener('change', (event) => {
+      state.problem = event.target.value;
+      track('awning_checklist_problem_change', { problem: state.problem });
+      render();
+    });
+
+    els.material.addEventListener('change', (event) => {
+      state.material = event.target.value;
+      track('awning_checklist_material_change', { material: state.material });
+      render();
+    });
+
+    els.budget.addEventListener('input', (event) => {
+      state.budget = Number(event.target.value);
+      render();
+    });
+
+    render();
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Caravan Awning Seasonal Checklist',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    description,
+    author: {
+      '@type': 'Person',
+      name: 'Sam Filce',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Filce.uk',
+    },
+    offers: [
+      { '@type': 'Offer', name: 'Caravan Awning Cleaner', url: amazon.cleaner },
+      { '@type': 'Offer', name: 'Caravan Awning Reproofer', url: amazon.reproofer },
+      { '@type': 'Offer', name: 'Caravan Awning Seam Sealer', url: amazon.seamSealer },
+      { '@type': 'Offer', name: 'Caravan Awning Rail Zip Lubricant', url: amazon.zipLube },
+    ],
+    isAccessibleForFree: true,
+  })} />
+</BaseLayout>
+
+<style>
+  .hero-shell {
+    padding: 3rem 0 1.5rem;
+    background:
+      radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 26%),
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+      linear-gradient(180deg, rgba(11, 18, 30, 0.96), rgba(6, 10, 18, 0.98));
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-grid,
+  .workflow-grid,
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    background: var(--color-surface);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .builder,
+  .sidebar,
+  .faq-card {
+    padding: 1.5rem;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.76rem;
+    color: #f59e0b;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.04;
+    margin-bottom: 1rem;
+  }
+
+  .lede,
+  .section-subtitle,
+  .sub,
+  .result-copy,
+  .stage-card p,
+  .faq-card p,
+  .note-box p,
+  .rules li {
+    color: var(--color-text-muted);
+    line-height: 1.68;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .cta-row.compact {
+    margin-top: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.85rem 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    min-height: 2.8rem;
+  }
+
+  .btn.primary {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: white;
+  }
+
+  .btn.secondary {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .btn.green {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+  }
+
+  .microcopy,
+  .small,
+  .status {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-top: 0.85rem;
+  }
+
+  .metric + .metric {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .label,
+  .result-label,
+  .stage-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .value,
+  .result-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .workflow-section,
+  .timeline-section,
+  .faq-section {
+    padding: 1.5rem 0;
+  }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .field span {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .field select,
+  .field input[type='range'] {
+    width: 100%;
+  }
+
+  .field select {
+    border-radius: 0.9rem;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-text);
+    padding: 0.85rem 0.95rem;
+  }
+
+  .range-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+  }
+
+  .results {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .result-card {
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .result-card.callout {
+    background: rgba(245, 158, 11, 0.08);
+  }
+
+  #checklist-output {
+    width: 100%;
+    min-height: 14rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-text);
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    resize: vertical;
+  }
+
+  .sidebar .rules {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .cta-stack {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .note-box {
+    margin-top: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .stage-card {
+    padding: 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: var(--color-surface);
+  }
+
+  .stage-card a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 700;
+  }
+
+  details {
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 0;
+  }
+
+  details summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  details p {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 1080px) {
+    .hero-grid,
+    .workflow-grid,
+    .faq-grid,
+    .timeline-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .field-grid,
+    .result-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .builder,
+    .sidebar,
+    .faq-card {
+      padding: 1.15rem;
+    }
+
+    .timeline-grid {
+      gap: 0.85rem;
+    }
+  }
+</style>

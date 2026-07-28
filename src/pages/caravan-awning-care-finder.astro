@@ -1,0 +1,791 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Caravan Awning Care Finder UK 2026 — Cleaner, Reproofer or Seam Sealer?';
+const description = 'Pick the right awning care product in under a minute. Compare cleaner, reproofer, seam sealer, zip lubricant, and PVC cleaner options with direct UK buy links.';
+const canonicalPath = '/caravan-awning-care-finder/';
+
+const posts = {
+  cleaner: '/posts/best-caravan-awning-cleaner-uk-2026/',
+  explainer: '/posts/awning-cleaner-vs-reproofer-vs-seam-sealer-uk-2026/',
+};
+
+const related = {
+  partsGuide: '/caravan-awning-parts-compatibility-guide/',
+  brandFitMatrix: '/caravan-awning-brand-fit-matrix/',
+  seasonalChecklist: '/caravan-awning-seasonal-checklist/',
+  repairEstimator: '/caravan-awning-repair-estimator/',
+};
+
+const amazon = {
+  cleaner: 'https://www.amazon.co.uk/s?k=caravan+awning+cleaner&tag=filce-21',
+  reproofer: 'https://www.amazon.co.uk/s?k=awning+reproofer&tag=filce-21',
+  seamSealer: 'https://www.amazon.co.uk/s?k=seam+sealer+awning&tag=filce-21',
+  zipLube: 'https://www.amazon.co.uk/s?k=awning+rail+zip+lubricant&tag=filce-21',
+  pvcCleaner: 'https://www.amazon.co.uk/s?k=PVC+awning+cleaner&tag=filce-21',
+};
+
+const faqItems = [
+  {
+    question: 'Should I clean or reproof first?',
+    answer: 'Clean first. Reproofing over dirt usually traps the contamination and gives a worse result.',
+  },
+  {
+    question: 'Does seam sealer replace reproofer?',
+    answer: 'No. Seam sealer fixes stitching leaks. Reproofer restores water repellency across the fabric.',
+  },
+  {
+    question: 'What if the awning is PVC?',
+    answer: 'Use a cleaner intended for PVC or vinyl where possible, then move to the relevant repair product if needed.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} ogType="website" category="Tools">
+  <section class="hero-shell">
+    <div class="container hero-grid">
+      <div class="card hero-copy">
+        <p class="eyebrow">Affiliate comparison tool · caravan awnings</p>
+        <h1>Choose the right awning care product before you waste money on the wrong one.</h1>
+        <p class="lede">
+          Dirty fabric, faded waterproofing, leaking seams, or sticky rails all need different fixes. This page routes caravan and motorhome owners to the right product category fast, then sends the warmest clicks to the product pages or buyer guides that already convert.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#finder" data-track-event="awning_finder_jump_click" data-track-surface="hero">Find my product</a>
+          <a class="btn secondary" href={posts.explainer} data-track-event="awning_finder_explainer_click" data-track-surface="hero">Read the chooser guide</a>
+          <a class="btn green" href={posts.cleaner} data-track-event="awning_finder_cleaner_guide_click" data-track-surface="hero">See the cleaner guide</a>
+        </div>
+        <p class="microcopy">Revenue mechanism: a simple intent-split tool that increases affiliate click-through and reduces bounce from awning-care search traffic.</p>
+        <p class="small help-link">Need help choosing between cleaner, reproofer, seam sealer, and rail care? <a href={posts.explainer} data-track-event="awning_finder_help_link_click" data-track-surface="hero-help">Read the awning chooser guide</a>.</p>
+        <p class="small help-link">Want a pre-buy upkeep checklist first? <a href={related.seasonalChecklist} data-track-event="awning_finder_seasonal_checklist_help_link_click" data-track-surface="hero-help">Open the seasonal checklist</a>.</p>
+      </div>
+
+      <div class="card hero-panel" aria-label="Recommendation summary">
+        <div class="metric">
+          <div class="label">Best for mildew / road film</div>
+          <div class="value">Cleaner</div>
+          <div class="sub">start with a dedicated awning cleaner</div>
+        </div>
+        <div class="metric">
+          <div class="label">Best for waterproofing loss</div>
+          <div class="value">Reproofer</div>
+          <div class="sub">use after cleaning and drying</div>
+        </div>
+        <div class="metric">
+          <div class="label">Best for seam leaks</div>
+          <div class="value">Seam sealer</div>
+          <div class="sub">only when stitching is the problem</div>
+        </div>
+        <div class="metric">
+          <div class="label">Fastest route to buy</div>
+          <div class="value">Compare → click</div>
+          <div class="sub">then hand them off to the buyer guide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-reading-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Related reading</h2>
+        <p class="section-sub">Awning owners who actually need fit or parts help can move back into the compatibility guide or brand matrix before they buy the wrong product.</p>
+      </div>
+      <div class="card">
+        <ul class="rules">
+          <li><a href="/posts/best-caravan-moisture-control-products-for-winter-storage-uk/" data-track-event="awning_finder_moisture_control_click" data-track-surface="related-reading">Compare the moisture control products</a></li>
+          <li><a href={posts.explainer} data-track-event="awning_finder_explainer_related_click" data-track-surface="related-reading">Read the awning chooser guide</a></li>
+          <li><a href="/caravan-awning-seasonal-checklist/" data-track-event="awning_finder_checklist_related_click" data-track-surface="related-reading">Use the seasonal checklist</a></li>
+          <li><a href={related.repairEstimator} data-track-event="awning_finder_repair_related_click" data-track-surface="related-reading">Open the repair estimator</a></li>
+          <li><a href={related.partsGuide} data-track-event="awning_finder_parts_related_click" data-track-surface="related-reading">Check the parts compatibility guide</a></li>
+          <li><a href={related.brandFitMatrix} data-track-event="awning_finder_brand_matrix_related_click" data-track-surface="related-reading">Open the brand fit matrix</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="finder-section">
+    <div class="container finder-grid-2">
+      <div class="card chooser" id="finder">
+        <h2 class="section-title">Awning care finder</h2>
+        <p class="section-subtitle">Tell us the main problem and awning type. The recommendation updates instantly with a best-first product and a backup option.</p>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Main problem</span>
+            <select id="problem">
+              <option value="dirty">Grey, dirty, road film, or mildew spots</option>
+              <option value="waterproofing">Clean fabric that no longer beads water</option>
+              <option value="seams">Leaks through stitching or tiny holes</option>
+              <option value="rails">Sticky rail, zipper, or moving parts</option>
+              <option value="refresh">Full seasonal refresh / all of the above</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Awnings material</span>
+            <select id="material">
+              <option value="fabric">Fabric awning</option>
+              <option value="pvc">PVC / vinyl awning</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Budget ceiling</span>
+            <input id="budget" type="range" min="5" max="60" step="1" value="18" />
+            <div class="range-row"><span>£5</span><span id="budget-label">£18</span><span>£60</span></div>
+          </label>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div class="result-card">
+            <div class="result-label">Recommended first buy</div>
+            <div class="result-title" id="result-title">Dedicated caravan awning cleaner</div>
+            <div class="result-copy" id="result-copy">Use a cleaner first so you do not lock dirt into the fabric or waste a reproofer on a dirty surface.</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Best backup / add-on</div>
+            <div class="result-title" id="result-secondary">Reproofer after the wash</div>
+            <div class="result-copy" id="result-secondary-copy">If the awning is clean but still not beading water, move to a reproofer next.</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Suggested action</div>
+            <div class="result-copy" id="result-action">Check the product list below, then read the chooser guide if you are still unsure.</div>
+          </div>
+
+          <div class="cta-row compact">
+            <a class="btn primary" id="primary-link" href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_primary_click" data-track-surface="results">Check price</a>
+            <a class="btn secondary" id="secondary-link" href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_secondary_click" data-track-surface="results">See backup option</a>
+            <button class="btn green" type="button" id="copy-brief" data-track-event="awning_finder_copy_brief_click" data-track-surface="results">Copy recommendation</button>
+          </div>
+          <p class="small status" id="copy-status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <aside class="card sidebar">
+        <h2 class="section-title">Fast rules of thumb</h2>
+        <ul class="rules">
+          <li><strong>Dirty fabric:</strong> buy a cleaner first.</li>
+          <li><strong>Water no longer beads:</strong> buy a reproofer after cleaning.</li>
+          <li><strong>Water through seams:</strong> use seam sealer, not more cleaner.</li>
+          <li><strong>Sticky zips / rails:</strong> add a rail or zip lubricant.</li>
+          <li><strong>PVC awnings:</strong> prefer a PVC-specific cleaner where possible.</li>
+        </ul>
+
+        <div class="cta-stack">
+          <a class="btn primary" href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_cleaner_amazon_click" data-track-surface="sidebar">Shop cleaners</a>
+          <a class="btn secondary" href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_reproofer_amazon_click" data-track-surface="sidebar">Shop reproofer</a>
+          <a class="btn secondary" href={amazon.seamSealer} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_seam_sealer_click" data-track-surface="sidebar">Shop seam sealer</a>
+          <a class="btn secondary" href={amazon.zipLube} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_zip_lube_click" data-track-surface="sidebar">Shop rail / zip lube</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="comparison-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Best product by job</h2>
+        <p class="section-sub">Use the right tool for the right repair. The product names below match the live awning-care market, but the links stay flexible via Amazon search.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <article class="product-card">
+          <p class="product-kicker">Cleaner</p>
+          <h3>Fenwicks Cleaner For Awnings And Tents</h3>
+          <p>Best when the awning is simply dirty, grey, or covered in road film and light mildew. Start here for most owners.</p>
+          <a href={amazon.cleaner} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_product_cleaner_click" data-track-surface="comparison">View current price</a>
+        </article>
+        <article class="product-card">
+          <p class="product-kicker">Reproofer</p>
+          <h3>Fenwicks Awning &amp; Tent Reproofer</h3>
+          <p>Best after cleaning if the fabric no longer beads water. Restore repellency before you start looking at more invasive fixes.</p>
+          <a href={amazon.reproofer} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_product_reproofer_click" data-track-surface="comparison">View current price</a>
+        </article>
+        <article class="product-card">
+          <p class="product-kicker">Seam sealer</p>
+          <h3>Awning seam sealer</h3>
+          <p>Best when water is getting through stitching or tiny holes. This is repair, not routine maintenance.</p>
+          <a href={amazon.seamSealer} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_product_seam_click" data-track-surface="comparison">View current price</a>
+        </article>
+        <article class="product-card">
+          <p class="product-kicker">Rail / zip care</p>
+          <h3>Quest Awning Rail Zip Lubricant Spray</h3>
+          <p>Best as a small add-on once the main cleaning job is done. Helps the rails and zips move more smoothly.</p>
+          <a href={amazon.zipLube} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_product_zip_click" data-track-surface="comparison">View current price</a>
+        </article>
+        <article class="product-card">
+          <p class="product-kicker">PVC cleaner</p>
+          <h3>Thule PVC Awning &amp; Tent Cleaner</h3>
+          <p>Best when the awning is PVC or vinyl and you want a cleaner that fits the material more closely.</p>
+          <a href={amazon.pvcCleaner} target="_blank" rel="noopener sponsored" data-track-event="awning_finder_product_pvc_click" data-track-surface="comparison">View current price</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container guide-grid">
+      <article class="card guide-card">
+        <h2>Not sure what you need?</h2>
+        <p>Start with the explainer, then move to the best product page. That keeps the visitor in the buying journey instead of bouncing back to generic search results.</p>
+        <div class="cta-row">
+          <a class="btn primary" href={posts.explainer} data-track-event="awning_finder_explainer_mid_click" data-track-surface="guide">Read the explainer</a>
+          <a class="btn secondary" href={posts.cleaner} data-track-event="awning_finder_cleaner_mid_click" data-track-surface="guide">Read the cleaner guide</a>
+        </div>
+      </article>
+
+      <article class="card guide-card">
+        <h2>What this page is selling</h2>
+        <ul>
+          <li>Cleaner traffic converts into the right Amazon search click.</li>
+          <li>Waterproofing-intent traffic gets the reproofer category.</li>
+          <li>Repair-intent traffic gets seam sealer or rail care, not another cleaning pitch.</li>
+          <li>Comparison-intent visitors can hop to the supporting article cluster for more context.</li>
+          <li>Winter storage / damp-intent caravan traffic can compare moisture control products before buying.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container faq-grid">
+      <article class="card faq-card">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Should I clean or reproof first?</summary>
+          <p>Clean first. Reproofing over dirt usually traps the contamination and gives a worse result.</p>
+        </details>
+        <details>
+          <summary>Does seam sealer replace reproofer?</summary>
+          <p>No. Seam sealer fixes stitching leaks. Reproofer restores water repellency across the fabric.</p>
+        </details>
+        <details>
+          <summary>What if the awning is PVC?</summary>
+          <p>Use a cleaner intended for PVC or vinyl where possible, then move to the relevant repair product if needed.</p>
+        </details>
+      </article>
+
+      <article class="card faq-card">
+        <h2>Affiliate disclosure</h2>
+        <p>Some links on this page are affiliate links. If someone buys through them, I may earn a commission at no extra cost to the buyer. That helps fund the site and keeps the buying guides free.</p>
+        <p class="small">For the full product-side guide, read <a href={posts.cleaner}>Best Caravan Awning Cleaner UK 2026</a> and the explainer above.</p>
+      </article>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  })} />
+
+  <script>
+    const state = {
+      problem: 'dirty',
+      material: 'fabric',
+      budget: 18,
+    };
+
+    const els = {
+      problem: document.getElementById('problem'),
+      material: document.getElementById('material'),
+      budget: document.getElementById('budget'),
+      budgetLabel: document.getElementById('budget-label'),
+      resultTitle: document.getElementById('result-title'),
+      resultCopy: document.getElementById('result-copy'),
+      resultSecondary: document.getElementById('result-secondary'),
+      resultSecondaryCopy: document.getElementById('result-secondary-copy'),
+      resultAction: document.getElementById('result-action'),
+      primaryLink: document.getElementById('primary-link'),
+      secondaryLink: document.getElementById('secondary-link'),
+      copyBrief: document.getElementById('copy-brief'),
+      copyStatus: document.getElementById('copy-status'),
+    };
+
+    const urls = {
+      cleaner: 'https://www.amazon.co.uk/s?k=caravan+awning+cleaner&tag=filce-21',
+      reproofer: 'https://www.amazon.co.uk/s?k=awning+reproofer&tag=filce-21',
+      seamSealer: 'https://www.amazon.co.uk/s?k=seam+sealer+awning&tag=filce-21',
+      zipLube: 'https://www.amazon.co.uk/s?k=awning+rail+zip+lubricant&tag=filce-21',
+      pvcCleaner: 'https://www.amazon.co.uk/s?k=PVC+awning+cleaner&tag=filce-21',
+    };
+
+    function money(n) {
+      return `£${Number(n).toFixed(0)}`;
+    }
+
+    function track(eventName, props = {}) {
+      const payload = { event: eventName, ...props };
+      console.info('[caravan-awning-care-finder]', eventName, props);
+      window.dataLayer?.push?.(payload);
+      window.plausible?.(eventName, { props });
+      window.gtag?.('event', eventName, { ...props, transport_type: 'beacon' });
+    }
+
+    function setCopy(text) {
+      if (els.copyStatus) els.copyStatus.textContent = text;
+    }
+
+    async function copyRecommendation(text) {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', 'true');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+        setCopy('Recommendation copied — ready to paste into DMs or notes.');
+      } catch (err) {
+        console.error(err);
+        setCopy('Clipboard blocked, but the recommendation is still visible on screen.');
+      }
+    }
+
+    function deriveRecommendation() {
+      const problem = state.problem;
+      const material = state.material;
+      const budget = state.budget;
+
+      let first = 'Dedicated caravan awning cleaner';
+      let firstCopy = 'For most awnings, the best first buy is a cleaner that lifts road film, dirt, and mildew before anything else.';
+      let second = 'Reproofer after the wash';
+      let secondCopy = 'If the fabric is clean but no longer beads water, add a reproofer next.';
+      let primaryUrl = urls.cleaner;
+      let secondaryUrl = urls.reproofer;
+      let action = 'Compare the options below, then use the explainer if you are still unsure what problem you actually have.';
+
+      if (problem === 'waterproofing') {
+        first = 'Awning reproofer';
+        firstCopy = 'Clean the fabric first, then restore water repellency with a reproofer once it is fully dry.';
+        primaryUrl = urls.reproofer;
+        if (budget >= 25) {
+          second = 'Cleaner for the prep step';
+          secondCopy = 'If you have not cleaned the awning yet, do that before applying waterproofing treatment.';
+          secondaryUrl = urls.cleaner;
+        }
+      }
+
+      if (problem === 'seams') {
+        first = 'Awning seam sealer';
+        firstCopy = 'If the leak comes from stitching or pinholes, seam sealer is the right fix. Cleaner alone will not solve it.';
+        primaryUrl = urls.seamSealer;
+        second = 'Cleaner before repair';
+        secondCopy = 'You still want the awning clean and dry before any seam repair product goes on.';
+        secondaryUrl = urls.cleaner;
+      }
+
+      if (problem === 'rails') {
+        first = 'Rail / zip lubricant';
+        firstCopy = 'If the main issue is sticky rails or zips, a lubricant is a useful add-on rather than the headline product.';
+        primaryUrl = urls.zipLube;
+        second = 'Cleaner for the fabric';
+        secondCopy = 'If the fabric is also dirty, clean it first and then add the rail / zip care.';
+        secondaryUrl = urls.cleaner;
+      }
+
+      if (problem === 'refresh') {
+        first = 'Caravan awning cleaner';
+        firstCopy = 'For a full seasonal refresh, clean first, then decide whether waterproofing or seam repair is needed.';
+        primaryUrl = urls.cleaner;
+        second = 'Reproofer or seam sealer';
+        secondCopy = 'Choose the next step based on whether the issue is water beading or actual seam leakage.';
+        secondaryUrl = urls.reproofer;
+        if (budget >= 30) {
+          action = 'A full-refresh basket usually makes sense: cleaner plus reproofer, with seam sealer or rail lubricant only if required.';
+        }
+      }
+
+      if (material === 'pvc') {
+        first = problem === 'seams' ? first : 'PVC-specific awning cleaner';
+        firstCopy = problem === 'seams'
+          ? 'If seams are leaking, fix the seam first; otherwise use a PVC-specific cleaner for the outer surface.'
+          : 'PVC or vinyl awnings usually do better with a cleaner intended for that material.';
+        if (problem === 'dirty' || problem === 'refresh') {
+          primaryUrl = urls.pvcCleaner;
+          second = 'Reproofer or seam sealer if needed';
+          secondCopy = 'Only move beyond cleaning once you know whether the problem is repellency or a leak.';
+          secondaryUrl = urls.reproofer;
+        }
+      }
+
+      if (material === 'unsure') {
+        action = 'Not sure about the material? Start with the explainer, then buy the cleaner that matches the problem you can actually see.';
+      }
+
+      if (budget < 12 && first !== 'Awning seam sealer') {
+        second = 'Lower-cost cleaner search';
+        secondCopy = 'A smaller-budget search often still finds an acceptable cleaner without paying for the bigger bottles.';
+        secondaryUrl = urls.cleaner;
+      }
+
+      return { first, firstCopy, second, secondCopy, primaryUrl, secondaryUrl, action };
+    }
+
+    function render() {
+      const rec = deriveRecommendation();
+      els.budgetLabel.textContent = money(state.budget);
+      els.resultTitle.textContent = rec.first;
+      els.resultCopy.textContent = rec.firstCopy;
+      els.resultSecondary.textContent = rec.second;
+      els.resultSecondaryCopy.textContent = rec.secondCopy;
+      els.resultAction.textContent = rec.action;
+      els.primaryLink.href = rec.primaryUrl;
+      els.secondaryLink.href = rec.secondaryUrl;
+      els.copyBrief.textContent = `Copy ${rec.first.toLowerCase()} recommendation`;
+
+      els.copyBrief.onclick = () => {
+        track('awning_finder_copy_brief_click', { problem: state.problem, material: state.material, budget: state.budget });
+        copyRecommendation([
+          `Problem: ${state.problem}`,
+          `Material: ${state.material}`,
+          `Budget: ${money(state.budget)}`,
+          `Recommended first buy: ${rec.first}`,
+          `Backup option: ${rec.second}`,
+          `Primary URL: ${rec.primaryUrl}`,
+          `Backup URL: ${rec.secondaryUrl}`,
+        ].join('\n'));
+      };
+    }
+
+    els.problem.addEventListener('change', (event) => {
+      state.problem = event.target.value;
+      track('awning_finder_problem_change', { problem: state.problem });
+      render();
+    });
+
+    els.material.addEventListener('change', (event) => {
+      state.material = event.target.value;
+      track('awning_finder_material_change', { material: state.material });
+      render();
+    });
+
+    els.budget.addEventListener('input', (event) => {
+      state.budget = Number(event.target.value);
+      render();
+    });
+
+    render();
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Caravan Awning Care Finder',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    description,
+    author: {
+      '@type': 'Person',
+      name: 'Sam Filce',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Filce.uk',
+    },
+    offers: [
+      { '@type': 'Offer', name: 'Caravan Awning Cleaner', url: amazon.cleaner },
+      { '@type': 'Offer', name: 'Caravan Awning Reproofer', url: amazon.reproofer },
+      { '@type': 'Offer', name: 'Caravan Awning Seam Sealer', url: amazon.seamSealer },
+      { '@type': 'Offer', name: 'Caravan Awning Rail Zip Lubricant', url: amazon.zipLube },
+    ],
+    isAccessibleForFree: true,
+  })} />
+</BaseLayout>
+
+<style>
+  .hero-shell {
+    padding: 3rem 0 1.5rem;
+    background:
+      radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 26%),
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+      linear-gradient(180deg, rgba(11, 18, 30, 0.96), rgba(6, 10, 18, 0.98));
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-grid,
+  .finder-grid-2,
+  .guide-grid,
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    background: var(--color-surface);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .chooser,
+  .sidebar,
+  .guide-card,
+  .faq-card {
+    padding: 1.5rem;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.76rem;
+    color: #f59e0b;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.04;
+    margin-bottom: 1rem;
+  }
+
+  .lede,
+  .section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .cta-row.compact {
+    margin-top: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.85rem 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    min-height: 2.8rem;
+  }
+
+  .btn.primary {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: white;
+  }
+
+  .btn.secondary {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .btn.green {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+  }
+
+  .microcopy,
+  .small,
+  .status {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-top: 0.85rem;
+  }
+
+  .metric + .metric {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .label,
+  .result-label,
+  .product-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .value,
+  .result-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .sub,
+  .result-copy,
+  .product-card p,
+  .guide-card p,
+  .faq-card p,
+  .rules li {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  .finder-section,
+  .comparison-section,
+  .guide-section,
+  .faq-section {
+    padding: 1.5rem 0;
+  }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .field span {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .field select,
+  .field input[type='range'] {
+    width: 100%;
+  }
+
+  .field select {
+    border-radius: 0.9rem;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-text);
+    padding: 0.85rem 0.95rem;
+  }
+
+  .range-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+  }
+
+  .results {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .result-card {
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .sidebar .rules {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .cta-stack {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .product-card {
+    padding: 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: var(--color-surface);
+  }
+
+  .product-card a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 700;
+  }
+
+  .guide-grid,
+  .faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide-card ul {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  details {
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 0;
+  }
+
+  details summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  details p {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 1080px) {
+    .comparison-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-grid,
+    .finder-grid-2,
+    .guide-grid,
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .field-grid,
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .chooser,
+    .sidebar,
+    .guide-card,
+    .faq-card {
+      padding: 1.25rem;
+    }
+  }
+</style>
